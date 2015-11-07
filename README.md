@@ -7,12 +7,12 @@ Welcome to the developer pages for the Intelecom SMS Gateway API. Here you will 
 
 Well - that depends on you, may we suggest:
 
-- Browsing our list of libraries you can import into your existing code - A good choice if you want to just dive right into coding.
-- Learn how our documentation is structured
-- Read our introduction to A2P SMS and SMS Gateways - a good starting point if you have not used a SMS Gateway before.
-- Read the API documentation for one of our specific interfaces
-- Learn about Intelecom, our history in providing SMS services and other related products.
-- Find out how to register an account with Intelecom to start using the SMS Gateway services.
+- Browsing our [list of libraries](#list-of-official-libraries) you can import into your existing code - A good choice if you want to just dive right into coding.
+- Learn how our documentation is [structured](#how-the-documentation-is-structured)
+- Read our [introduction to A2P SMS and SMS Gateways](/sections/About.md) - a good starting point if you have not used a SMS Gateway before.
+- Read the [API documentation](/sections/Interfaces-general.md) for one of our specific interfaces
+- [Learn about Intelecom](#about-intelecom), our history in providing SMS services and other related products.
+- Find out [how to register an account](#registering-an-account) with Intelecom to start using the SMS Gateway services.
 
 ### List of official libraries
 
@@ -22,7 +22,7 @@ These links will navigate to the respective repository for the chosen library. B
 
 **List of current libraries:**
 
-- PHP  
+- [PHP](https://github.com/Intelecom/smsgw-client-php)  
 - Java  
 - .NET 
 - Go 
@@ -37,18 +37,18 @@ The documentation consists of different sections, starting an overview / table o
 
 **Section list:**
 
-- Overview (Introduction and ToC)
-- About A2P SMS and SMS Gateways
-- Common SMS Gateway documentation - information relevant to most of the interfaces.
-- Interface specifications
-	- REST API
-	- SOAP API
-	- HTTP GET API
-	- SMTP SMS GW
-	- TCP sockets / XML
-	- SMPP
-- Library documentation - Each library provides basic "getting started" in each repo (readme.md).
-- How to get in touch with us?
+- [Overview](Overview.md) (Introduction and ToC)
+- [About A2P SMS and SMS Gateways](/sections/About.md)
+- [Common SMS Gateway documentation](/sections/Common.md) - information relevant to most of the interfaces.
+- [Interface specifications](Interfaces-general.md)
+	- [REST API](sections\Interfaces\Rest.md)
+	- [SOAP API](sections\Interfaces\Soap.md)
+	- [HTTP GET API](sections\Interfaces\HTTP_Get.md)
+	- [SMTP SMS GW](sections\Interfaces\SMTP.md)
+	- [TCP sockets / XML](sections\Interfaces\TCP_XML.md)
+	- [SMPP](sections\Interfaces\SMPP.md)
+- Library documentation - [Each library](#list-of-official-libraries) provides basic "getting started" in each repo (readme.md).
+- How to [get in touch with us](/sections/Contact.md)?
 
 We also provide reference documentation such as the SMPP specification and GSM specifications. 
 
@@ -71,14 +71,11 @@ We provide innovative solutions for SMS, mobile applications, system integration
 
 SMS solutions have been a part of Intelecom starting with the platform originally set up by Carrot Communications  back in 2000. Since then not a lot have changed in the basic SMS GSM specifications, but a lot have changed concerning our customers demands for stability, scalablity, redundancy and speed. SMS now is a business critical application for many companies, both private and public. In addition a lot have happened with SMS as a payment channel over the years. In later years many telcos have been opening up for selling physical goods and services, using SMS or carrier billing as payment. We at Intelecom have been working hard to keep up, both with customer demands and new possibilities over the years. As a result, we have a SMS platform, now in it's fifth major version, that is both techically advanced, high-capacity and stable. 
 
+#### Intelecom Group
+[Intelecom Group AS](http://www.intelecom.no) was started in Norway in 1998 and has its roots in older companies such as Alcatel and Nexans. In 2010 Intelecom merged with Carrot Communications. The main office is located in Oslo, with branch offices in many other Norwegian cities, Sweden, Denmark, Bulgaria and UK. 
 
-Intelecom Group AS
-Intelecom was started in Norway in 1998 and has its roots in older companies such as Alcatel and Nexans. In 2010 Intelecom merged with Carrot Communications. The main office is located in Oslo, with branch offices in many other Norwegian cities, Sweden, Denmark, Bulgaria and UK. 
-
-Herkules Capital
-Since 2010, Intelecom Group and its subsidiaries have been fully owned by Herkules Capital, the leading Norwegian private equity firm which supports established companies located in the Nordic region with strong growth potential.
-
-
+#### Herkules Capital
+Since 2010, Intelecom Group and its subsidiaries have been fully owned by [Herkules Capital](http://www.herkulescapital.no/), the leading Norwegian private equity firm which supports established companies located in the Nordic region with strong growth potential.
 
 ### Authors
 - Sven Ståle Osa

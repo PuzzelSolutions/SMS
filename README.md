@@ -24,10 +24,10 @@ These links will navigate to the respective repository for the chosen library. B
 
 - [PHP](https://github.com/Intelecom/smsgw-client-php)  
 - Java  
-- .NET 
-- Go 
-- Python
-- Node.js   
+- [.NET](https://github.com/Intelecom/smsgw-client-dotnet)  
+- [Go](https://github.com/Intelecom/smsgw-client-go)  
+- [Python](https://github.com/Intelecom/smsgw-client-python)  
+- [Node.js](https://github.com/Intelecom/smsgw-client-nodejs)   
 
 Please do get in touch and let us know if you are missing any libraries from this list.
 

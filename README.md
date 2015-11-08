@@ -37,7 +37,7 @@ The documentation consists of different sections, starting an overview / table o
 
 **Section list:**
 
-- [Overview](Overview.md) (Introduction and ToC)
+- [Overview](/sections/Overview.md) (Introduction and ToC)
 - [About A2P SMS and SMS Gateways](/sections/About.md)
 - [Common SMS Gateway documentation](/sections/Common.md) - information relevant to most of the interfaces.
 - [Interface specifications](Interfaces-general.md)

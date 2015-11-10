@@ -40,7 +40,8 @@ To receive SMS messages (MO) or delivery reports you need to provide a service e
 
 Additionally, the Gateway provides a Management API to manage messages. A description of this API is given here: Gateway Management API.
 
-## Abbreviations
+**Abbreviations**
+
 <table>
 <tr><th>Abbreviation</th><th>Description</th></tr>	
 <tr><td>MCC</td><td>Mobile Country Code</td></tr>	

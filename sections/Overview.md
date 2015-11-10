@@ -41,7 +41,6 @@ To receive SMS messages (MO) or delivery reports you need to provide a service e
 Additionally, the Gateway provides a Management API to manage messages. A description of this API is given here: Gateway Management API.
 
 ## Abbreviations
-
 <table>
 <tr><th>Abbreviation</th><th>Description</th></tr>	
 <tr><td>MCC</td><td>Mobile Country Code</td></tr>	
@@ -60,6 +59,3 @@ Additionally, the Gateway provides a Management API to manage messages. A descri
 <tr><td>MNO</td><td>Mobile Network Operation (e.g. Telenor, Telia)</td></tr>	
 <tr><td>CPA</td><td>Content Provider Access – An agreement with MNOs to be able to use four digit shortnumbers with billing possibilities.</td></tr>	
 <tr><td>GAS</td><td> Goods And Services – Like CPA only with the possibility to sell physical goods and services.</td></tr>	
-
-
-[Back to main page](/sms) - [Next section](/sections/About.md)

@@ -1,5 +1,5 @@
 #Overview
-[Back to main page](/sms) - [Next section](/sections/About.md)
+[Back to main page](../sms) - [Next section](/sections/About.md)
 
 ## Table of Contents
 

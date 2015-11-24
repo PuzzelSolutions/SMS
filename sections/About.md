@@ -1,5 +1,7 @@
 # About A2P SMS and SMS Gateways
 
+[Back to main page](/sms) - [Next section](/sections/Common.md)
+
 SMS is best known for P2P messaging where SMS messages are exchanged between two mobile phones. Chances are that you in the last couple of months also have recevied an SMS that was sent from a machine. This may be confirmation of a taxi booking, a one-time password for access or notification of your next dentist appointment. If so, you have received an A2P SMS message. 
 
 A2P SMS is when SMS messages are sent from an application, such as a CRM system, VPN pincode solution (OTP) or custom webpages _to_ a mobile phone. This also often named MT - Mobile _Terminated_ SMS messages. Messages may also be sent _from_ the mobile phone to an application, what is called P2A messages, and also often MO - Mobile _originated_ messages.

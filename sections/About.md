@@ -1,6 +1,6 @@
 # About A2P SMS and SMS Gateways
 
-[Back to main page](/sms) - [Next section](/sections/Common.md)
+[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) -  [Next section](/sections/Common.md)
 
 SMS is best known for P2P messaging where SMS messages are exchanged between two mobile phones. Chances are that you in the last couple of months also have recevied an SMS that was sent from a machine. This may be confirmation of a taxi booking, a one-time password for access or notification of your next dentist appointment. If so, you have received an A2P SMS message. 
 

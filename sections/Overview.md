@@ -55,7 +55,7 @@ Additionally, the Gateway provides a Management API to manage messages. A descri
 <tr><td>CP</td><td>Content Providers (Customers of Intelecom and Intelecom itself)</td></tr>	
 <tr><td>DR</td><td>Delivery Reports (Confirmations from operators that messages have been / not have been received by end-user)</td></tr>	
 <tr><td>MSISDN</td><td> Mobile Station International ISDN Number</td></tr>	
-<tr><td>SNSGW</td><td>SIntelecom SMS Gateway</td></tr>	
+<tr><td>SMSGW</td><td>Intelecom SMS Gateway</td></tr>	
 <tr><td>REST</td><td>Representational State Transfer (https://en.wikipedia.org/wiki/Representational_state_transfer)</td></tr>	
 <tr><td>MNO</td><td>Mobile Network Operation (e.g. Telenor, Telia)</td></tr>	
 <tr><td>CPA</td><td>Content Provider Access – An agreement with MNOs to be able to use four digit shortnumbers with billing possibilities.</td></tr>	

@@ -23,7 +23,7 @@ These links will navigate to the respective repository for the chosen library. B
 **List of current libraries:**
 
 - [PHP](https://github.com/Intelecom/smsgw-client-php)  
-- Java  
+- [Java](https://github.com/Intelecom/smsgw-client-java) 
 - [.NET](https://github.com/Intelecom/smsgw-client-dotnet)  
 - [Go](https://github.com/Intelecom/smsgw-client-go)  
 - [Python](https://github.com/Intelecom/smsgw-client-python)  

@@ -1,5 +1,7 @@
 # Common SMS Gateway documentation 
 
+[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/About.md) - [Next section](/sections/Interfaces-general.md)
+
 This section describes all relevant parameters used in the Intelecom SMS Gateway and which is common for all different interfaces. 
 
 ## Parameters for MT (outgoing) SMS messages
@@ -298,7 +300,7 @@ This is an asynchronous operation and you will need to implement a mechanism for
 <tr><td>Phonero (Previous Ventelo Customers)</td><td>242</td><td>7</td></tr>
 <tr><td>TDC Norway</td><td>242</td><td>8</td></tr>
 <tr><td>Tele2 Norway</td><td>240</td><td>7</td></tr>
-</table>  </td></tr>	
+</table></td></tr>	
 <tr><td>statuscode</td><td>Integer</td><td><table>
 <tr><th>Code</th><th>Description</th></tr>	
 <tr><td>0</td><td>Operation successful.</td></tr>
@@ -340,7 +342,6 @@ This is an asynchronous operation and you will need to implement a mechanism for
 </table> 
 
 ### Reponse when receiving DR - Delivery Reports from Intelecom
-
 
 You must respond to the HTTP request with a HTTP 200 header response, otherwise any other header responses will cause a retry of delivery.
  

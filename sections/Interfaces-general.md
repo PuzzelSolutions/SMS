@@ -4,12 +4,12 @@
 
 The SMS Gateway API have several different interfaces that you can choose to integrate towards. We generally suggest the REST API for both MT, MO and DR SMS if you have no preference.
 
-- [REST API](sections\Interfaces\Rest.md)
-- [SOAP API](sections\Interfaces\Soap.md)
-- [HTTP GET API](sections\Interfaces\HTTP_Get.md)
-- [SMTP SMS GW](sections\Interfaces\SMTP.md)
-- [SMPP](sections\Interfaces\SMPP.md)
-- [TCP sockets / XML](sections\Interfaces\TCP_XML.md)
+- [REST API](/sections/Interfaces/Rest.md)
+- [SOAP API](/sections/Interfaces/Soap.md)
+- [HTTP GET API](/sections/Interfaces/HTTP_Get.md)
+- [SMTP SMS GW](/sections/Interfaces/SMTP.md)
+- [SMPP](/sections/Interfaces/SMPP.md)
+- [TCP sockets / XML](/sections/Interfaces/TCP_XML.md)
 
 The different interfaces have some differences regarding what functionality is available, see table below:
 

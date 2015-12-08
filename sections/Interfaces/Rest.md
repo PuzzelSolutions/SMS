@@ -47,7 +47,8 @@ The XML request and response uses the same schema used in the WSDL definition fo
 					<originator>Intelecom</originator>
 					<originatorType>Alphanumeric</originatorType>
 				</originatorSettings>
-				<safeRemoveNonGsmCharacters>true</safeRemoveNonGsmCharacters>		</settings>
+				<safeRemoveNonGsmCharacters>true</safeRemoveNonGsmCharacters>
+			</settings>
 		</message>
 	</req:request>
 

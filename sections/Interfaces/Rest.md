@@ -1,8 +1,8 @@
 # REST API
 
-[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](//sections/Interfaces-general.md) -  [Next section](sections\Interfaces\Soap.md)
+[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Interfaces-general.md) -  [Next section](/sections/Interfaces/Soap.md)
 
-This section describes how to integrate towards the Intelecom SMS Gateway REST API. Please see [here](sections\Interfaces\Common.md) for information about the available message parameters.
+This section describes how to integrate towards the Intelecom SMS Gateway REST API. The Rest APIs support both sending SMS (MT), receiving SMS (MO) and delivery reports (DR). Please see [here](sections\Interfaces\Common.md) for information about the available message parameters.
 
 ## Sending messages
 

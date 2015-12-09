@@ -10,6 +10,13 @@ Also note that due to URL length limitations this interface is not optimal for b
 
 The HTTPS GET APIs support both sending SMS (MT), receiving SMS (MO) and delivery reports (DR). Please see [here](/sections/Interfaces/Common.md) for information about the available message parameters.
 
+## Encoding
+
+The request URI must be percent encoded, following RFC2396 (“Uniform Resource Identifiers (URI): Generic Syntax”), and use UTF-8.
+For example, a message with the content “Dette er en melding med ÆØÅ i seg” should be encoded as:
+
+	Dette%20er%20en%20melding%20med%20%C3%A6%C3%B8%C3%A5%20i%20seg.
+
 ## Sending messages (MT)
 
 ### How to connect
@@ -28,12 +35,6 @@ A dot (“.”) notation is used to specify nested properties, such as message[0
 
 Similar to the other interfaces the HTTP GET interface supports sending multiple messages. Message parameters must therefore be prefixed with message[n] (n is a zero-based index for the message). The first message is therefore message[0]. For example to set the message content for the first message the query parameter key name would be message[0].content. Similarly, setting the recipient becomes message[0].recipient.
 
-### Encoding
-
-The request URI must be percent encoded, following RFC2396 (“Uniform Resource Identifiers (URI): Generic Syntax”), and use UTF-8.
-For example, a message with the content “Dette er en melding med ÆØÅ i seg” should be encoded as:
-
-	Dette%20er%20en%20melding%20med%20%C3%A6%C3%B8%C3%A5%20i%20seg.
 
 ### Request examples
 

@@ -1,6 +1,6 @@
 #Available Interfaces
 
-[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Common.md) -  [Next section](sections\Interfaces\Rest.md)
+[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Common.md) -  [Next section](/sections/Interfaces/Rest.md)
 
 The SMS Gateway API have several different interfaces that you can choose to integrate towards. We generally suggest the REST API for both MT, MO and DR SMS if you have no preference.
 
@@ -25,4 +25,3 @@ The different interfaces have some differences regarding what functionality is a
 </table>
 
 It is possible to combine the different interfaces, for example it is possible to send MT messages using SOAP webservices, receive MO SMS using Rest API (HTTP POST with JSON or XML) and recieve delivery reports using HTTP(S) GET.
-

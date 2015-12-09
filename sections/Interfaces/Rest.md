@@ -2,7 +2,7 @@
 
 [Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Interfaces-general.md) -  [Next section](/sections/Interfaces/Soap.md)
 
-This section describes how to integrate towards the Intelecom SMS Gateway REST API. The Rest APIs support both sending SMS (MT), receiving SMS (MO) and delivery reports (DR). Please see [here](sections\Interfaces\Common.md) for information about the available message parameters.
+This section describes how to integrate towards the Intelecom SMS Gateway REST API. The Rest APIs support both sending SMS (MT), receiving SMS (MO) and delivery reports (DR). Please see [here](/sections/Interfaces/Common.md) for information about the available message parameters.
 
 ## Sending messages
 
@@ -123,8 +123,9 @@ If you want to enable end users to send SMS messages to your solution via REST y
 
 The SMSGW will invoke your HTTP service when MO messages are slated for delivery to your server. The URL of your service must be provided to Intelecom Interactive Service Desk (support.interactive@intele.com) for proper configuration of the service. You also need to provide information of which content-type you want to use (HTTP POST with JSON or HTTP POST with XML).
 
+If you need to add a firewall rule, all requests will originate from IP: 212.89.48.14.
 
-For description of incoming SMS (MO) parameters see [this section](sections\Interfaces\Common.md#parameters-for-incoming-mo-messages).
+For description of incoming SMS (MO) parameters see [this section](sections/Interfaces/Common.md#parameters-for-incoming-mo-messages).
 
 ### HTTP POST example with JSON formatted data
 
@@ -210,7 +211,7 @@ If you need to know whether a specific message is received by the end users hand
 
 This is an asynchronous operation and you will need to implement a mechanism for storing messageid and/ or batchReference and/ or clientReference from sent (MT) messages in order to associate an incoming delivery report to the correct MT message.
 
-For description of delivery report parameters see [this section](sections\Interfaces\Common.md#parameters-for-delivery-reports-dr).
+For description of delivery report parameters see [this section](/sections/Interfaces/Common.md#parameters-for-delivery-reports-dr).
 
 ### HTTP POST example with JSON formatted data
 	

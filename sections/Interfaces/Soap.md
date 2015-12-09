@@ -4,7 +4,7 @@
 
 This section describes how to integrate towards the Intelecom SMS Gateway SOAP (webservices) API. The SOAP API only support sending SMS (MT), meaning that receiving SMS (MO) and delivery reports (DR) will have to be implemented using protocols that support these message types such as HTTP GET or HTTP POST with JSON or XML. An overview over each protocols capabilities are shown [here](/sections/Interfaces-general.md) 
 
-Please see [here](sections\Interfaces\Common.md) for information about the available message parameters.
+Please see [here](sections/Interfaces/Common.md) for information about the available message parameters.
 
 ### How to connect
 

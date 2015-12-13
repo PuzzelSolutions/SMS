@@ -1,8 +1,10 @@
 #SMPP API
 
+[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Interfaces/TCP_XML.md) -  [Next section](/sections/Interfaces/Management-api.md)
+
 It is possible to integrate towards the Intelecom SMS gateway using the SMPP protocol. Please see chapter 8 - Appendix B for further details.
 
-The SMPP Gateway supports version 3.4 of the SMPP interface. The SMPP protocol specification can be provided upon request.
+The SMPP Gateway supports version 3.4 of the SMPP interface. The SMPP protocol specification can found onine, for example [here](https://www.openmarket.com/customer-center/documentation/SMSSMPP-Specification/SMPP-v3-4-Issue1-2.pdf)
 
 ### Supported PDUs
 - bind_receiver

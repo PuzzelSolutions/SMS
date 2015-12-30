@@ -38,7 +38,7 @@ To receive SMS messages (MO) or delivery reports you need to provide a service e
 #####High level sequence diagram for basic SMS Gateway operations
 ![Figure 1: High-level sequence diagram for basic SMSGW operations](http://i.imgur.com/3CXClMd.jpg)
 
-Additionally, the Gateway provides a Management API to manage messages. A description of this API is given here: Gateway Management API.
+Additionally, the Gateway provides a Management API to manage messages. A description of this API is given [here](/sections/Management.api.md).
 
 ##Abbreviations
 

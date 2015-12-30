@@ -1,63 +1,383 @@
-#Overview
-[Back to main page](https://github.com/Intelecom/sms/) - [Next section](/sections/About.md)
+#Gateway Management API
+[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Interfaces/SMPP.md) -  [Next section](/sections/Interfaces/Management-api.md)
 
-## Table of Contents
 
-- [Overview](/sections/Overview.md) (This section)
-- [About A2P SMS and SMS Gateways](/sections/About.md)
-- [Common SMS Gateway documentation](/sections/Common.md) - information relevant to most of the interfaces.
-- [Interface specifications](Interfaces-general.md)
-	- [REST API](/sections/Interfaces/Rest.md)
-	- [SOAP API](/sections/Interfaces/Soap.md)
-	- [HTTP GET API](/sections/Interfaces/HTTP_Get.md)
-	- [SMTP SMS GW](/sections/Interfaces/SMTP.md)
-	- [TCP sockets / XML](/sections/Interfaces/TCP_XML.md)
-	- [SMPP](/sections/Interfaces/SMPP.md)
-- Library documentation - [Each library](#list-of-official-libraries) provides basic "getting started" in each repo (readme.md).
-- How to [get in touch with us](/sections/Contact.md)?
+This API provides functionality to manage messages and receive status from the Gateway. Functionality is divided into functional groups described below.
+The API is available from web service and REST interfaces, similar to the SMS sending API. It also uses the same triplet of service identifiers (service id, username and password) as explained [here](sections/Common.md#common-parameters).
 
-##Introduction
-This documentation describes the functionality of, and explains how to integrate with, the Intelecom SMS Gateway (SMSGW). 
+## Interfaces for using the management API
 
-The SMSGW is an API that enables your solution(s) to send and receive SMS messages, both single messages and bigger batches of messages using the same API. 
+The management API is available as a web service and REST service.
 
-To be able to connect to SMSGW you will need a service configured by Intelecom with sensible defaults and settings for your use case.  The service identifiers are serviceid, as well as a username and password. Please contact Intelecom Support (support.interactive@intele.com) if you want to create an agreement, demo account or if you have an active agreement but have not received these credentials.
+### Web service (SOAP over HTTP)
 
-The SMSGW has three main functionalities with corresponding APIs:
+The web service interface is defined by the WSDL and can be retrieved from: 
 
-- Sending one or many SMS messages from your system to end-users (MT)
-- Receiving SMS messages from end-users to your system (MO)
-- Receiving delivery reports to your system for SMS messages sent to end-users (DR)
+	https://[server-address]/mgmt/ws/GatewayManagementV10?wsdl
 
-To send SMS messages to end-users you need to integrate with one of the APIs via REST (XML, JSON or web form over HTTP POST), Web Service (with corresponding WSDL), email (SMTP), SMPP, TCP Sockets or via HTTP GET (with query parameters). 
-
-Due to the flexibility of the REST / SOAP interfaces, we generally recommend that you choose to integrate with one of these endpoints if possible.
-
-To receive SMS messages (MO) or delivery reports you need to provide a service endpoint that can receive HTTP GET or POST requests. As an alternative, you can also receive MO messages as email messages (SMTP) or using the SMPP protocol.
-
-#####High level sequence diagram for basic SMS Gateway operations
-![Figure 1: High-level sequence diagram for basic SMSGW operations](http://i.imgur.com/3CXClMd.jpg)
-
-Additionally, the Gateway provides a Management API to manage messages. A description of this API is given here: Gateway Management API.
-
-##Abbreviations
+#### Error codes
 
 <table>
-<tr><th>Abbreviation</th><th>Description</th></tr>	
-<tr><td>MCC</td><td>Mobile Country Code</td></tr>	
-<tr><td>MNC</td><td>Mobile Network Code</td></tr>	
-<tr><td>SNO</td><td>Short Number (e.g. 1960)</td></tr>	
-<tr><td>TTL</td><td>Time To Live</td></tr>	
-<tr><td>UDH</td><td>User Data Header</td></tr>	
-<tr><td>DCS</td><td>Data Coding Scheme</td></tr>	
-<tr><td>MO</td><td>Mobile Originated (incoming messages sent from end users)</td></tr>	
-<tr><td>MT</td><td>Mobile Terminated (outgoing messages sent to end users).</td></tr>	
-<tr><td>CP</td><td>Content Providers (Customers of Intelecom and Intelecom itself)</td></tr>	
-<tr><td>DR</td><td>Delivery Reports (Confirmations from operators that messages have been / not have been received by end-user)</td></tr>	
-<tr><td>MSISDN</td><td> Mobile Station International ISDN Number</td></tr>	
-<tr><td>SMSGW</td><td>Intelecom SMS Gateway</td></tr>	
-<tr><td>REST</td><td>Representational State Transfer (https://en.wikipedia.org/wiki/Representational_state_transfer)</td></tr>	
-<tr><td>MNO</td><td>Mobile Network Operation (e.g. Telenor, Telia)</td></tr>	
-<tr><td>CPA</td><td>Content Provider Access – An agreement with MNOs to be able to use four digit shortnumbers with billing possibilities.</td></tr>	
-<tr><td>GAS</td><td> Goods And Services – Like CPA only with the possibility to sell physical goods and services.</td></tr>	
+<tr><th>Value</th><th>Description</th><tr>
+<tr><td>1000</td><td>No batch found matching the given customer batch reference for this service
+In addition the status codes for the SMS Gateway API are also used, e.g., for authorization errors.</td></tr>
 </table>
+
+### REST
+
+The REST interface supports both XML and JSON over HTTP with the following base URI:
+
+	https://[server-address]/mgmt/rs/service/{serviceid}
+
+Parameter definition:
+
+<table>
+<tr><th>Type</th><th>Name</th><th>Mandatory</th><th>Description</th>
+<tr><td>Path</td><td>{serviceid}</td><td>Y</td><td>Identifies the service to be managed.</td>
+</table>
+
+Example:
+
+	https://[server-address]/mgmt/rs/service/100
+
+Each API documented below defines the URIs used for the request based on this base URI.
+Use the HTTP Accept header to specify what Content-Type your client prefers for the response. XML (MIME-type: text/xml) and JSON (MIME-type: application/json) are supported.
+
+
+> Note that HTTP Basic authentication (IETF RFC 2617) is used for authentication. 
+
+## Message batch management
+
+These APIs allow managing batches of messages sent that have been throttled (queued for sending in the Intelecom platform). 
+
+	Base URI path: /batch/
+
+### Resource representations
+
+#### StoppedBatch
+
+<table>
+<tr><th>Property name</th><th>type</th><th>Description</th></tr>	
+<tr><td>MessageId</td><td>String</td><td>Unique messageid generated by the platform for this message. The messageid is generated by the channel container.</td></tr>	
+<tr><td>CustomerMessageReference</td><td>String</td><td>Customer’s message reference for the message, if given.</td></tr>
+</table>
+
+#### MessageBatch
+
+<table>
+<tr><th>Property name</th><th>type</th><th>Description</th></tr>	
+<tr><td>clientBatchReference</td><td>String</td><td>Reference name for this batch. Can be used to stop the batch.</td></tr>	
+<tr><td>totalSize</td><td>Integer</td><td>Number of messages left in this batch.</td></tr>
+<tr><td>onHold</td><td>Integer</td><td>Number of messages on hold in this batch.</td></tr>
+</table>
+
+### Stop batch API
+
+Stop messages that previously have been sent that are throttled. If sending has started for the batch only those messages still throttled will be stopped.
+
+	Request URI path: /batch/{batch-reference}
+	Request method: DELETE
+
+#### Request Parameters
+
+<table>
+<tr><th>Type</th><th>Name</th><th>Mandatory</th><th>Description</th></tr>	
+<tr><td>Path</td><td>{batch-reference}</td><td>Yes</td><td>Identifies the batch to be managed. Set as the batchReference parameter when sending messages.<br/><br/>
+Example:<br/>
+https://[server-url]/mgmt/rs/service/100/batch/my-batch<br/><br/>
+A request that references batch “my-batch” of service with id 100.
+</td></tr>	
+</table>
+
+#### Response Parameters
+
+<table>
+<tr><th>Type</th><th>Name</th><th>Mandatory</th><th>Description</th></tr>	
+<tr><td>Entity</td><td>StopBatchResponse</td><td>Yes</td><td>Response entity</td></tr>	
+<tr><td></td><td>StopBatchResponse<br/>#ServiceId</td><td>Yes</td><td>Service id for the response. Same as provided in the request.</td></tr>
+<tr><td></td><td>StopBatchResponse<br/>#ClientBatchReference</td><td>Yes</td><td>Client batch reference for the response. Same as provided in the request.</td></tr>
+<tr><td></td><td>StopBatchResponse<br/>#StoppedMessages</td><td>Yes</td><td>CList of messages that were stopped. Other messages in the batch may have been sent. See “StoppedBatch” resource representation above</td></tr>		
+</table>
+
+#### Response HTTP Statuscodes
+
+<table>
+<tr><th>Status code</th><th>Status description</th><th>Description</th></tr>	
+<tr><td>200</td><td>Ok</td><td>Request executed successfully. See response entity for detailed results.</td></tr>
+<tr><td>401</td><td>Unauthorized</td><td>The pair of username and password given is not authorized to manage the provided service id.<br/>
+Note that username and password must be provided per the HTTP Basic authentication standard (IETF RFC2617).
+</td></tr>
+<tr><td>404</td><td>Not Found</td><td>The requested batch cannot be found. Ensure that the batch reference is correct for the given service.</td></tr>
+<tr><td>500</td><td>Internal Server Error</td><td>An unexpected error has occurred. For example invalid request URI.</td></tr>		
+</table>
+
+#### Examples
+
+##### SOAP Webservice Request
+
+	<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gwmgmt="http://chimera.intele.com/gw/wsdl/GatewayManagement-v1.0">
+	   <soapenv:Header/>
+	   <soapenv:Body>
+	      <gwmgmt:stopBatchRequest>
+	         <!--You may enter the following 4 items in any order-->
+	         <serviceId>1000</serviceId>
+	         <username>intelecom</username>
+	         <password>xdyf3bf2</password>
+	         <clientBatchReference>my-batch-reference</clientBatchReference>
+	      </gwmgmt:stopBatchRequest>
+	   </soapenv:Body>
+	</soapenv:Envelope>
+
+##### SOAP Webservice Response
+
+	<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	   <soap:Body>
+	      <ns2:stopBatchResponse 
+	           xmlns:ns2="http://chimera.intele.com/gw/wsdl/GatewayManagement-v1.0">
+	         <serviceId>27</serviceId>
+	         <clientBatchReference>my-batch-reference</clientBatchReference>
+	         <stoppedMessages>
+	            <messageId>6z02r0001500</messageId>
+	         </stoppedMessages>
+	         <stoppedMessages>
+	            <messageId>6z02r0001600</messageId>
+	         </stoppedMessages>
+	         <stoppedMessages>
+	            <messageId>6z02r0001700</messageId>
+	         </stoppedMessages>
+	      </ns2:stopBatchResponse>
+	   </soap:Body>
+	</soap:Envelope>
+
+
+##### REST Request
+
+	DELETE /mgmt/rs/service/1000/batch/my-batch-reference HTTP/1.1
+	Host: smsgw.intele.com
+	Authorization: Basic aW50ZWxlY29tOnhkeWYzYmYy
+	User-Agent: curl/7.26.0
+	Accept: application/json
+
+> Notice that this example uses the Accept-header to request “application/json” used as the response content type.
+Also notice the usage of HTTP Basic authentication for service authentication and authorization.
+
+##### REST Response
+
+	HTTP/1.1 200 OK
+	Date: Thu, 16 Jan 2014 13:22:13 GMT
+	Content-Type: application/json
+	Connection: close
+	Transfer-Encoding: chunked
+	
+	{
+	  "serviceId":1000,
+	  "clientBatchReference":"my-batch-reference",
+	  "stoppedMessages":[
+	    {"messageId":"6z02r0001200","clientMessageReference":null},
+	    {"messageId":"6z02r0001300","clientMessageReference":null},
+	    {"messageId":"6z02r0001400","clientMessageReference":null}
+	  ]
+	}
+
+### Batch list API
+
+Retrieve list of batches to be sent including their size and state (waiting to be sent or on hold). If sending has started for the batch only those messages still throttled will be reported.
+
+	Request URI path: /batch/	
+	Request method: GET
+
+#### Request Parameters
+
+N / A
+
+
+#### Response Parameters
+
+<table>
+<tr><th>Type</th><th>Name</th><th>Mandatory</th><th>Description</th></tr>	
+<tr><td>Entity</td><td>getBatchListResponse</td><td>Yes</td><td>Response entity</td></tr>	
+<tr><td>List</td><td>messageBatch</td><td>Yes</td><td>List of message batches for this service. See “MessageBatch” resource representation above</td></tr>
+</table>
+
+#### Response HTTP Statuscodes
+
+<table>
+<tr><th>Status code</th><th>Status description</th><th>Description</th></tr>	
+<tr><td>200</td><td>Ok</td><td>Request executed successfully. See response entity for detailed results.</td></tr>
+<tr><td>401</td><td>Unauthorized</td><td>The pair of username and password given is not authorized to manage the provided service id.<br/>
+Note that username and password must be provided per the HTTP Basic authentication standard (IETF RFC2617).
+</td></tr>
+<tr><td>404</td><td>Not Found</td><td>The requested batch cannot be found. Ensure that the batch reference is correct for the given service.</td></tr>
+<tr><td>500</td><td>Internal Server Error</td><td>An unexpected error has occurred. For example invalid request URI.</td></tr>		
+</table>
+
+
+##### SOAP Webservice Request
+
+	<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns: gwmgmt ="http://chimera.intele.com/gw/wsdl/GatewayManagement-v1.1">
+	   <soapenv:Header/>
+	   <soapenv:Body>
+	      <gwmgmt:getBatchListRequest>
+	         <!--You may enter the following 3 items in any order-->
+	         <serviceId>1000</serviceId>
+	         <username>intelecom</username>
+	         <password> xdyf3bf2</password>
+	      </gwmgmt:getBatchListRequest>
+	   </soapenv:Body>
+	</soapenv:Envelope>
+
+##### SOAP Webservice Response
+	
+	<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	   <soap:Body>
+	      <ns2:getBatchListResponse xmlns:ns2="http://chimera.intele.com/gw/wsdl/GatewayManagement-v1.1">
+	         <messageBatch>
+	            <clientBatchReference>gwmgmt-test</clientBatchReference>
+	            <totalSize>3</totalSize>
+	            <onHold>1</onHold>
+	         </messageBatch>
+	      </ns2:getBatchListResponse>
+	   </soap:Body>
+	</soap:Envelope>
+
+##### REST Request 
+
+	GET /mgmt/rs/service/1000/batch/ HTTP/1.1
+	Host: smsgw.intele.com
+	Authorization: Basic aW50ZWxlY29tOnhkeWYzYmYy
+	User-Agent: curl/7.26.0
+	Accept: application/json
+
+> Notice that this example uses the Accept-header to request “application/json” used as the response content type.
+Also notice the usage of HTTP Basic authentication for service authentication and authorization.
+
+##### REST Response
+	
+	HTTP/1.1 200 OK
+	Cache-Control: max-age=60, private
+	Content-Encoding: gzip
+	Date: Thu, 16 Jan 2014 13:22:13 GMT
+	Content-Type: application/json
+	Connection: close
+	Transfer-Encoding: chunked
+	
+	{
+	  "messageBatch":[
+	    {
+	      “clientBatchReference” : “my-batch-reference",
+	      “totalSize” : 1000,
+	      “onHold” : 0
+	    },
+	    {
+	      “clientBatchReference” : “another-batch",
+	      “totalSize” : 200,
+	      “onHold” : 0
+	    },
+	    {
+	      “clientBatchReference” : “discount-notification",
+	      “totalSize” : 30000,
+	      “onHold” : 0
+	    }
+	}
+
+
+### Batch status API
+
+Status for a single batch, including total size and state (waiting to be sent or on hold). If sending has started for the batch only those messages still throttled will be reported.
+
+	Request URI path: /batch/{batch-reference}
+	Request method: GET
+
+
+#### Request Parameters
+
+<table>
+<tr><th>Type</th><th>Name</th><th>Mandatory</th><th>Description</th></tr>	
+<tr><td>Path</td><td>{batch-reference}</td><td>Yes</td><td>Identifies the batch to be managed. Set as the batchReference parameter when sending messages.<br/><br/>
+Example:<br/>
+https://[server-url]/mgmt/rs/service/100/batch/my-batch<br/><br/>
+A request that references batch “my-batch” of service with id 100.
+</td></tr>	
+</table>
+
+#### Response Parameters
+
+<table>
+<tr><th>Type</th><th>Name</th><th>Mandatory</th><th>Description</th></tr>	
+<tr><td>Entity</td><td>getBatchStatusResponse</td><td>Yes</td><td>Response entity</td></tr>	
+<tr><td></td><td>getBatchStatusResponse#messageBatch<br/>#ServiceId</td><td>Yes</td><td>Message batch. See “MessageBatch” resource representation above.</td></tr>	
+</table>
+
+#### Response HTTP Statuscodes
+
+<table>
+<tr><th>Status code</th><th>Status description</th><th>Description</th></tr>	
+<tr><td>200</td><td>Ok</td><td>Request executed successfully. See response entity for detailed results.</td></tr>
+<tr><td>401</td><td>Unauthorized</td><td>The pair of username and password given is not authorized to manage the provided service id.<br/>
+Note that username and password must be provided per the HTTP Basic authentication standard (IETF RFC2617).
+</td></tr>
+<tr><td>404</td><td>Not Found</td><td>The requested batch cannot be found. Ensure that the batch reference is correct for the given service.</td></tr>
+<tr><td>500</td><td>Internal Server Error</td><td>An unexpected error has occurred. For example invalid request URI.</td></tr>		
+</table>
+
+#### Examples
+
+##### SOAP Webservice Request
+
+	<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns: gwmgmt ="http://chimera.intele.com/gw/wsdl/GatewayManagement-v1.1">
+	   <soapenv:Header/>
+	   <soapenv:Body>
+	      <gwmgmt:getBatchStatusRequest>
+	         <!--You may enter the following 3 items in any order-->
+	         <serviceId>1000</serviceId>
+	         <username>intelecom</username>
+	         <password> xdyf3bf2</password>
+	         <clientBatchReference>my-batch</clientBatchReference>
+	      </gwmgmt:getBatchStatusRequest>
+	   </soapenv:Body>
+	</soapenv:Envelope>
+
+
+##### SOAP Webservice Response
+
+	<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	   <soap:Body>
+	      <ns2:getBatchStatusResponse xmlns:ns2="http://chimera.intele.com/gw/wsdl/GatewayManagement-v1.1">
+	         <messageBatch>
+	            <clientBatchReference>my-batch</clientBatchReference>
+	            <totalSize>3000</totalSize>
+	            <onHold>100</onHold>
+	         </messageBatch>
+	      </ns2:getBatchListResponse>
+	   </soap:Body>
+	</soap:Envelope>
+
+##### REST Request
+
+	GET /mgmt/rs/service/1000/batch/my-batch HTTP/1.1
+	Host: smsgw.intele.com
+	Authorization: Basic aW50ZWxlY29tOnhkeWYzYmYy
+	User-Agent: curl/7.26.0
+	Accept: application/json
+
+> Notice that this example uses the Accept-header to request “application/json” used as the response content type.
+Also notice the usage of HTTP Basic authentication for service authentication and authorization.
+
+##### REST Response
+
+	HTTP/1.1 200 OK
+	Cache-Control: max-age=60, private
+	Content-Encoding: gzip
+	Date: Thu, 16 Jan 2014 13:22:13 GMT
+	Content-Type: application/json
+	Connection: close
+	Transfer-Encoding: chunked
+	
+	{
+	  "messageBatch":{
+	      “clientBatchReference” : “my-batch",
+	      “totalSize” : 3000,
+	      “onHold” : 100
+	    }
+	}
+

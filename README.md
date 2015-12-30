@@ -60,7 +60,7 @@ To use the SMS Gateway you will need the URLs to our staging / production sites 
 - Username / password
 - Serviceid
 
-If you do not already have an account, and want to try out or order access, please do contact us for more information. We provide demo accounts for both live and emulated MNOs - no strings attached. 
+If you do not already have an account, and want to try out or order access, please do [contact us](/sections/Contact.md) for more information. We provide demo accounts for both live and emulated MNOs - no strings attached. 
 
 For live accounts pricing is based on establishment, monthly subscription and traffic (per message) fees. Contact us for more information.
 

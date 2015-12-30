@@ -1,4 +1,4 @@
-#Gateway Management API
+#SMS Gateway Management API
 [Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Interfaces/SMPP.md) -  [Next section](/sections/Interfaces/Management-api.md)
 
 

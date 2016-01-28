@@ -1,5 +1,5 @@
 #SMS Gateway Management API
-[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Interfaces/SMPP.md) -  [Next section](/sections/Interfaces/Management-api.md)
+[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Interfaces/SMPP.md) -  [Next section](/sections/Interfaces/VAS.md)
 
 
 This API provides functionality to manage messages and receive status from the Gateway. Functionality is divided into functional groups described below.

@@ -13,6 +13,8 @@
 	- [SMTP SMS GW](/sections/Interfaces/SMTP.md)
 	- [TCP sockets / XML](/sections/Interfaces/TCP_XML.md)
 	- [SMPP](/sections/Interfaces/SMPP.md)
+	- [Management API](/sections/Interfaces/Management-api.md)
+	- [Value-added services for MO messages](/sections/Interfaces/VAS.md)
 - Library documentation - [Each library](#list-of-official-libraries) provides basic "getting started" in each repo (readme.md).
 - How to [get in touch with us](/sections/Contact.md)?
 

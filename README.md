@@ -1,5 +1,5 @@
 # Intelecom SMS Gateway
-## Offical documentation
+## Official documentation
 
 Welcome to the developer pages for the Intelecom SMS Gateway API. Here you will find all you need to SMS-enable your applications. This repository will cover the general API documentation and code samples. In addition we provide several other repositories containing finished libraries for many different programming languages.
 

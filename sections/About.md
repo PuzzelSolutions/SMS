@@ -36,7 +36,7 @@ In Norway, the supported premium rates are from 1,- to 1000,- in steps of 1 NOK.
 
 Example: To send a billing message with a price of 2 NOK to a Norwegian recipient, set the price parameter to the value of 200. 
 
-In some countries, there are also different business models depending on what product you are charging for.These business models decide the divident of the payout, i.e. the operator's cut. For example the business model "physical goods" have different payout than the business model "donation". Each service that is to use premium SMS also needs to be approved to use a given business model by the Mobile Network Operators. The business model is set by specifying a service code and category as defined by the mobile network operators for each message.  You can find the listing of the Mobile Network Operator service codes here. 
+In some countries, there are also different business models depending on what product you are charging for.These business models decide the divident of the payout, i.e. the operator's cut. For example the business model "physical goods" have different payout than the business model "donation". Each service that is to use premium SMS also needs to be approved to use a given business model by the Mobile Network Operators. The business model is set by specifying a service code and category as defined by the mobile network operators for each message.  You can find the listing of the Mobile Network Operator service codes [here](/references/ServiceCodes.md). 
 
 ### Message Originator
 

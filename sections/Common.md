@@ -110,8 +110,8 @@ Example: +4799999999, Intelecom, 1960
 ### GAS settings
 <table>
 <tr><th>Parameter Name</th><th>Data Type</th><th>Description</th><th>Mandatory</th></tr>	
-<tr><td>serviceCode</td><td>String</td><td>Identifier for the category of Goods and services. See <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#pricing---non-premium-and-premium-messages-cpa--gas">this section</a> for more information.<br/><br/> See list of valid servicecodes for valid parameter values for service codes.<br/><br/>
-Example: 05008</td><td>Yes</td></tr>	
+<tr><td>serviceCode</td><td>String</td><td>Identifier for the category of Goods and services. See <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#pricing---non-premium-and-premium-messages-cpa--gas">this section</a> for more information.<br/><br/> See list of valid servicecodes for valid parameter values for service codes <a href="https://github.com/Intelecom/sms/blob/master/references/ServiceCodes.md">here</a>.<br/><br/>
+Example: 05008</td><td>Yes</td></tr>
 <tr><td>description</td><td>String</td><td>Further details of the Goods and services. The description may occur on the end-user invoice (together with category) for certain Mobile Network Operators.
  <br/><br/>
 Example: Aftenposten

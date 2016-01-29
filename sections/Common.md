@@ -2,11 +2,11 @@
 
 [Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/About.md) - [Next section](/sections/Interfaces-general.md)
 
-This section describes all relevant parameters used in the Intelecom SMS Gateway and which is common for all different interfaces. 
+This section describes all relevant parameters used in the Intelecom SMS Gateway which is common for all interfaces. 
 
-## Parameters for MT (outgoing) SMS messages
+## Parameters for outgoing messages (MT)
 
-The following lists of parameters are used when sending messages in either of our available protocols. In its simplest form an outgoing message can consist of the common parameters, and at least one message object (basic message parameters) without any settings. 
+The following lists of parameters are used when sending messages in either of our available protocols. In its simplest form, an outgoing message can consist of the common parameters, and at least one message object (basic message parameters) without any settings. 
 
 ### Common parameters
 
@@ -27,7 +27,7 @@ The following lists of parameters are used when sending messages in either of ou
 <b>Note:</b> This must be a valid MSISDN, meaning <u>mobile phone number</u>. E.g. for Norway these numbers start with 4, 9, 58 or 59.</td><td>Yes</td></tr>	
 <tr><td>content</td><td>String</td><td>The message payload to send, typically the message text. Read <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#message-content">here</a> for more details.</td><td>Yes</td></tr>		
 <tr><td>price</td><td>Integer</td><td>The cost for the recipient to receive the message. In lowest monetary unit. See <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#pricing---non-premium-and-premium-messages-cpa--gas">here</a> for more details.<br/>
-Example value: 200 = 2,- NOK
+For example a value of 200 means 2 NOK in Norway.
 </td><td>No</td></tr>
 <tr><td>clientReference</td><td>String</td><td>Arbitrary client reference ID that will be returned in the message response.</td><td>No</td></tr>	
 <tr><td>settings</td><td>Composite object</td><td>For message settings, see below</td><td>No</td></tr>	
@@ -56,7 +56,7 @@ Example: marketing_dept
 </td><td>No</td></tr>	
 <tr><td>age</td><td>Integer</td><td>Only relevant for premium rate messages.<br/>
 Defines an age limit for message content. The mobile network operators enforces this.<br/><br/>
-IMPORTANT: If the service is a subscription service all premium rate messages must have age set to 18. <br/><br/>Valid values are:<br/>
+IMPORTANT: If the service is a subscription service, all premium rate messages must have age set to 18. <br/><br/>Valid values are:<br/>
 <ul>
 <li>0</li>
 <li>16</li>
@@ -73,7 +73,7 @@ Example: 01bxmt7f8b8h3zkwe2vg
 <tr><td>autoDetectEncoding</td><td>Boolean</td><td>Currently not in use. Default value is false.<br/><br/>
 Example: true
 </td><td>No</td></tr>
-<tr><td>safeRemoveNonGsmCharacters</td><td>Boolean</td><td>If set to true the SMSGW will remove or safely substitute invalid characters in the message content instead of rejecting the message. See <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#message-content">here</a> for more information. Default value is false.<br/><br/>
+<tr><td>safeRemoveNonGsmCharacters</td><td>Boolean</td><td>If set to true, the SMSGW will remove or safely substitute invalid characters in the message content instead of rejecting the message. See <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#message-content">here</a> for more information. Default value is false.<br/><br/>
 Example: true
 </td><td>No</td></tr>
 <tr><td>originatorSettings</td><td>Composite object</td><td>Used to specify the originator. See description below.<br/><br/>
@@ -159,7 +159,7 @@ May be used to specify operator specific business models..<br/><br/>
 Example: productA</td></tr>	
 <tr><td>dcs</td><td>One octet (2 hex digits)</td><td>Data Coding Scheme for message<br/><br/>
 
-Specifies what data coding scheme is used for this message. This feature is defined in 3GPP TS 23.038 ch. 4.<br/><br/>
+Specifies what data coding scheme to be used for this message. This feature is defined in 3GPP TS 23.038 ch. 4.<br/><br/>
 
 Should be one octet (2 hex digits). For example '15' or 'F5'.<br/><br/>
 Example: F5
@@ -212,7 +212,7 @@ Reference ID for the request. Either the value provided by the client in the req
 <tr><td>ILLEGAL_ACTION</td><td>3</td><td>An illegal operation was tried.</td></tr>	
 <tr><td>ILLEGAL_SERVICE</td><td>4</td><td>An illegal service was tried.</td></tr>	
 <tr><td>SYNTAX_ERROR</td><td>5</td><td>The request contained syntax errors.</td></tr>
-<tr><td>INTERNAL_ERROR</td><td>6</td><td>The request contained syntax errors.</td></tr>
+<tr><td>INTERNAL_ERROR</td><td>6</td><td>An internal error occured in the gateway.</td></tr>
 </table></td></tr>
 <tr><td>statusmessage</td><td>String</td><td>Textual information about status, e.g. which parameter failed
 </td></tr>		
@@ -221,47 +221,45 @@ Reference ID for the request. Either the value provided by the client in the req
 <tr><td>recipient</td><td>String</td><td>The recipient of the SMS message (MSISDN).<br/><br/> 
 <b>Note:</b> The SMS gateway runs all numbers through a number parser and so the recipient in the response may be in same format than in the request, i.e. “+47 41 00 00 00” will be “+4741000000” in the response. Use the clientReference if you need to match messages in the request and response.
 </td></tr>
-<tr><td>messageId</td><td>String</td><td>Message ID (used as reference for delivery reports).
+<tr><td>messageId</td><td>String</td><td>Message identifier (used as reference for delivery reports).
 </td></tr>	
-<tr><td>sessionId</td><td>String</td><td>Sessionid for a session, see <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#sessions">here</a> for more information. Only returned if newSession parameter is set to true, or if a sessionid was specified.
+<tr><td>sessionId</td><td>String</td><td>Session identifier for a session, see <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#sessions">here</a> for more information. Only returned if newSession parameter is set to true, or if a sessionid was specified.
 <tr><td>sequenceIndex</td><td>Integer</td><td>The messages in the response will always be in the same order as in the request. The sequence index is a convenience counter starting at 1.</td></tr>	
 </table>  
 <br/>
 
 ## Receiving messages using the SMS Gateway (MO SMS)
 
-If you want to enable end users to send SMS messages to your solution you will need to set up a service able of receiving HTTP GET requests or HTTP POST requests through a REST API with either JSON or XML formatting. Whilst the HTTP GET API will one request for each message, the REST API will accumulate batches of messages and only send 1 request per second.
+If you want to enable end users to send SMS messages to your solution, you will need to set up a service able of receiving HTTP GET requests or HTTP POST requests through a REST API with either JSON or XML formatting. Whilst the HTTP GET API will only send one request for each message, the REST API will accumulate batches of messages and only send 1 request per second.
 
 The SMSGW will invoke your HTTP service when MO- and DR-messages are slated for delivery to your server. The URL of your service must be provided to Intelecom Interactive Service Desk ([support.interactive@intele.com](mailto:support.interactive@intele.com)) for proper configuration of the service. You also need to provide information about which API you prefer for incoming (MO) messages. (HTTP GET, HTTP POST with JSON or HTTP POST with XML).
 
-### Parameters for incoming (MO) messages
+### Parameters for incoming messages (MO)
 
 <table>
 <tr><th>Parameter Name</th><th>Data Type</th><th>Description</th></tr>	
-<tr><td>messageid</td><td>String</td><td>Unique messageid generated by the SMS platform for this message.</td></tr>
-<tr><td>sno</td><td>String</td><td>The shortnumber associated with this message (e.g. 1960).
+<tr><td>messageid</td><td>String</td><td>Unique message identifier generated by the SMS platform for this message.</td></tr>
+<tr><td>sno</td><td>String</td><td>The short number associated with this message (e.g. 1960).
 </td></tr>		
-<tr><td>command</td><td>String</td><td>Also known as keyword. The pattern that causing the routing to the service. Usually a keyword e.g. “TLF”
+<tr><td>command</td><td>String</td><td>Also known as keyword. The pattern that caused the routing to the service. Usually a keyword e.g. “TLF”
 </td></tr>	
 <tr><td>content</td><td>String</td><td>The content of the SMS message. For regular text SMS messages this is a plain text, for binary messages this will be hex content. 
 </td></tr>
 <tr><td>strippedcontent</td><td>String</td><td>Same as content, but <b>keyword</b> is stripped from beginning of content.
 </td></tr>	
-<tr><td>timestamp</td><td>Date - Format: yyyyMMdd HH:mm:ss</td><td>The time when the message entered the Intelecom SMS platform. 
+<tr><td>timestamp</td><td>Date - Format: yyyyMMdd HH:mm:ss</td><td>The time when the message entered the Intelecom's SMS platform. 
 <tr><td>sctimestamp</td><td>Date - Format: yyyyMMdd HH:mm:ss</td><td>Service Center time stamp represents the time the operator SMSC received the message.</td></tr>	
 <tr><td>serviceid</td><td>Integer</td><td>The id of the Intelecom service that has been identified for this message.</td></tr>	
-<tr><td>servicename</td><td>String</td><td>The name of the service as provisioned in Intelecom systems</td></tr>
+<tr><td>servicename</td><td>String</td><td>The name of the service as provisioned in Intelecom's systems</td></tr>
 <tr><td>originator</td><td>String</td><td>The originator / sender of the SMS message. MSISDN with country code (international formatting) - e.g. +4799999999 </td></tr>
-<tr><td>mcc / mnc</td><td>Integer</td><td>Mobile Country Code / Mobile Network Code for this message:
+<tr><td>mcc / mnc</td><td>Integer</td><td>Mobile Country Code / Mobile Network Code for this message. See <a href='https://en.wikipedia.org/wiki/Mobile_country_code'>here</a> for a full list. Here are the common norwegian values:
 <table>
 <tr><th>MNO (Operator)</th><th>MCC</th><th>MNC</th></tr>	
 <tr><td>Telenor</td><td>242</td><td>1</td></tr>
 <tr><td>NetCom</td><td>242</td><td>2</td></tr>
-<tr><td>Teletopia</td><td>242</td><td>3</td></tr>
 <tr><td>Network Norway</td><td>242</td><td>5</td></tr>
 <tr><td>Phonero (Previous Ventelo Customers)</td><td>242</td><td>7</td></tr>
 <tr><td>TDC Norway</td><td>242</td><td>8</td></tr>
-<tr><td>Tele2 Norway</td><td>240</td><td>7</td></tr>
 </table>  </td></tr>
 <tr><td>sessionid</td><td>String</td><td>This contains the session identifier that this message is a reply to, this parameter allows you to bind an outgoing and incoming message together. This field will be empty if the message does not belong to a session</td></tr>	
 <tr><td>type</td><td>Integer</td><td>Always=1 (parameter used to distinguish between MO and DR). Note that this parameter is only available on the HTTP GET interface.</td></tr>
@@ -271,15 +269,15 @@ The SMSGW will invoke your HTTP service when MO- and DR-messages are slated for 
 
 Your server must respond to the HTTP request with a HTTP 200 header response, any other response code will by default cause a retry of delivery.
 
-If the gateway does not receive a HTTP 200 acknowledge it will try resending the message to the CP. The MessageId will be the same as the previous attempt. Normally the mo-request will wait 60 seconds for the HTTP 200 response. If your server does not respond within the time limit the message is marked as undelivered and the gateway will try to resend the message later. 
+If the gateway does not receive a HTTP 200 acknowledge, it will try resending the message to the CP. The MessageId will be the same as the previous attempt. Normally the MO-request will wait 60 seconds for the HTTP 200 response. If your server does not respond within the time limit, the message is marked as undelivered and the gateway will try to resend the message later. 
 
-<b>IMPORTANT:</b> Respond as fast as possible on the request before you start doing heavy business logic. It is strongly recommended to use an asynchronous model where you acknowledge the message and add it to an internal queue for example database. Do not use a synchronous model where you do all the business logic and then send a response message. Our experience is that customers that fail to respond within the time limit of the request often experience that their messages are queued. This is because the system will use some of its resources to resubmit messages that your server has received earlier but failed to acknowledge. The higher the traffic peaks, the more significant this problem will be.
+<b>IMPORTANT:</b> Respond as fast as possible on the request before you start doing heavy business logic. It is strongly recommended to use an asynchronous model where you acknowledge the message and add it to an internal queue, for example database. Do not use a synchronous model where you do all the business logic and then send a response message. Our experience is that customers that fail to respond within the time limit of the request often experience that their messages are queued. This is because the system will use some of its resources to resubmit messages that your server has received earlier but failed to acknowledge. The higher the traffic peaks, the more significant this problem will be.
 
-## Receiving SMS Delivery Reports
+## Receiving SMS delivery reports (DR)
 
-If you need to know whether a specific message is received by the end users handset or not you will need to implement a server side service able of receiving HTTP GET requests or HTTP POST requests through a REST API with either JSON or XML formatted content.
+If you need to know whether a specific message is received by the end users handset or not, you will need to implement a server side service able of receiving HTTP GET requests or HTTP POST requests through a REST API with either JSON or XML formatted content.
  
-This is an asynchronous operation and you will need to implement a mechanism for storing messageid and/ or batchReference and / or clientReference from sent (MT) messages in order to associate an incoming delivery report to the correct MT message.
+This is an asynchronous operation and you will need to implement a mechanism for storing messageid and/ or batchReference and / or clientReference from sent messages (MT) in order to associate an incoming delivery report to the correct MT message.
 
 ### Parameters for delivery reports (DR) 
 
@@ -289,18 +287,17 @@ This is an asynchronous operation and you will need to implement a mechanism for
 <tr><td>customermessagereference</td><td>String</td><td>The clientReference you specified in the MT message. 
 </td></tr>	
 <tr><td>serviceid</td><td>Integer</td><td>The id of the Intelecom service that has been identified for this message.</td></tr>	
-<tr><td>servicename</td><td>String</td><td>The name of the service as provisioned in Intelecom systems</td></tr>
-<tr><td>mcc / mnc</td><td>Integer</td><td>Mobile Country Code / Mobile Network Code for this message:
+<tr><td>servicename</td><td>String</td><td>The name of the service as provisioned in Intelecom's systems</td></tr>
+<tr><td>originator</td><td>String</td><td>The originator / sender of the SMS message. MSISDN with country code (international formatting) - e.g. +4799999999 </td></tr>
+<tr><td>mcc / mnc</td><td>Integer</td><td>Mobile Country Code / Mobile Network Code for this message. See <a href='https://en.wikipedia.org/wiki/Mobile_country_code'>here</a> for a full list. Here are the common norwegian values:
 <table>
 <tr><th>MNO (Operator)</th><th>MCC</th><th>MNC</th></tr>	
 <tr><td>Telenor</td><td>242</td><td>1</td></tr>
 <tr><td>NetCom</td><td>242</td><td>2</td></tr>
-<tr><td>Teletopia</td><td>242</td><td>3</td></tr>
 <tr><td>Network Norway</td><td>242</td><td>5</td></tr>
 <tr><td>Phonero (Previous Ventelo Customers)</td><td>242</td><td>7</td></tr>
 <tr><td>TDC Norway</td><td>242</td><td>8</td></tr>
-<tr><td>Tele2 Norway</td><td>240</td><td>7</td></tr>
-</table></td></tr>	
+</table>  </td></tr>
 <tr><td>statuscode</td><td>Integer</td><td><table>
 <tr><th>Code</th><th>Description</th></tr>	
 <tr><td>0</td><td>Operation successful.</td></tr>
@@ -341,7 +338,7 @@ This is an asynchronous operation and you will need to implement a mechanism for
 <tr><td>type</td><td>Integer</td><td>Always=6 (parameter used to distinguish between MO and DR). Note that this parameter is only available on the HTTP GET interface.</td></tr>	
 </table> 
 
-### Reponse when receiving DR - Delivery Reports from Intelecom
+### Reponse when receiving delivery reports (DR) from Intelecom
 
 You must respond to the HTTP request with a HTTP 200 header response, otherwise any other header responses will cause a retry of delivery.
  

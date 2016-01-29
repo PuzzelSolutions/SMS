@@ -23,7 +23,7 @@ This documentation describes the functionality of, and explains how to integrate
 
 The SMSGW is an API that enables your solution(s) to send and receive SMS messages, both single messages and bigger batches of messages using the same API. 
 
-To be able to connect to SMSGW you will need a service configured by Intelecom with sensible defaults and settings for your use case.  The service identifiers are serviceid, as well as a username and password. Please contact Intelecom Support (support.interactive@intele.com) if you want to create an agreement, demo account or if you have an active agreement but have not received these credentials.
+To be able to connect to the SMSGW you will need a service configured by Intelecom with sensible defaults and settings for your use case.  The service identifiers are serviceid, as well as a username and password. Please contact Intelecom Support (support.interactive@intele.com) if you want to create an agreement, get a demo account or if you have an active agreement but have not received these credentials.
 
 The SMSGW has three main functionalities with corresponding APIs:
 
@@ -31,7 +31,7 @@ The SMSGW has three main functionalities with corresponding APIs:
 - Receiving SMS messages from end-users to your system (MO)
 - Receiving delivery reports to your system for SMS messages sent to end-users (DR)
 
-To send SMS messages to end-users you need to integrate with one of the APIs via REST (XML, JSON or web form over HTTP POST), Web Service (with corresponding WSDL), email (SMTP), SMPP, TCP Sockets or via HTTP GET (with query parameters). 
+To send SMS messages to end-users, you need to integrate with one of the APIs via REST (XML, JSON or web form over HTTP POST), Web Service (with corresponding WSDL), email (SMTP), SMPP, TCP Sockets or via HTTP GET (with query parameters). 
 
 Due to the flexibility of the REST / SOAP interfaces, we generally recommend that you choose to integrate with one of these endpoints if possible.
 
@@ -59,7 +59,7 @@ Additionally, the Gateway provides a Management API to manage messages. A descri
 <tr><td>MSISDN</td><td> Mobile Station International ISDN Number</td></tr>	
 <tr><td>SMSGW</td><td>Intelecom SMS Gateway</td></tr>	
 <tr><td>REST</td><td>Representational State Transfer (https://en.wikipedia.org/wiki/Representational_state_transfer)</td></tr>	
-<tr><td>MNO</td><td>Mobile Network Operation (e.g. Telenor, Telia)</td></tr>	
-<tr><td>CPA</td><td>Content Provider Access – An agreement with MNOs to be able to use four digit shortnumbers with billing possibilities.</td></tr>	
+<tr><td>MNO</td><td>Mobile Network Operator (e.g. Telenor, Telia)</td></tr>	
+<tr><td>CPA</td><td>Content Provider Access – An agreement with MNOs to be able to use four digit short numbers with billing possibilities.</td></tr>	
 <tr><td>GAS</td><td> Goods And Services – Like CPA only with the possibility to sell physical goods and services.</td></tr>	
 </table>

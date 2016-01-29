@@ -2,7 +2,7 @@
 
 [Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Common.md) -  [Next section](/sections/Interfaces/Rest.md)
 
-The SMS Gateway API have several different interfaces that you can choose to integrate towards. We generally suggest the REST API for both MT, MO and DR SMS if you have no preference.
+The SMS Gateway API have several different interfaces that you can choose to integrate towards. We generally suggest the REST API for both MT, MO and DR if you have no preference.
 
 - [REST API](/sections/Interfaces/Rest.md)
 - [SOAP API](/sections/Interfaces/Soap.md)

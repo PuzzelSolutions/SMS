@@ -19,11 +19,11 @@ There is a maximum limit of 918 characters of the sms, and sms’ that extend on
 
 It is also possible to configure the SMSGW to format and send an incoming SMS message as an email message.
 
-The email address to send incoming SMS messages to will need to be provided to Intelecom service desk. The end user mobile number as well as the incoming serviceid is by default set as the originator of the message (this is highly configurable though), so it is fully supported to reply to a email to respond immediately.
+The email address to send incoming SMS messages to will need to be provided to Intelecom service desk. The end user's mobile number as well as Intelecom's serviceid is by default set as the originator of the message (this is highly configurable though), so it is fully supported to reply to an email to respond immediately.
 
 The SMS message content will come in the email body, but is also highly configurable.
 
-By saying highly configurable, we mean that any field from [this]( can be substituted in any of the fields in the email. 
+By saying highly configurable, we mean that any field from [this section](sections/Interfaces/Common.md#parameters-for-incoming-mo-messages) can be substituted in any of the fields in the email. 
 
 Example: 
 

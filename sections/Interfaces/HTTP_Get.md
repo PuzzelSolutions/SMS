@@ -64,6 +64,8 @@ The SMSGW will invoke your HTTP service when MO messages are slated for delivery
 
 If you need to add a firewall rule, all requests will originate from IP: 212.89.48.14.
 
+[ngrok](/references/ngrok.md) is a great tool to use when testing MO / DR messages locally. 
+
 For description of incoming SMS (MO) parameters see [this section](sections/Interfaces/Common.md#parameters-for-incoming-mo-messages).
 
 ### MO SMS Example using HTTP(S) GET
@@ -78,6 +80,8 @@ The attributes in the SMS-MO message will substitute the corresponding parts of 
 If you need to know whether a specific message is received by the end user's handset or not, you will need to implement a server side service able of receiving HTTP(S) GET requests. 
 
 This is an asynchronous operation and you will need to implement a mechanism for storing messageid and/ or batchReference and/ or clientReference from sent messages (MT) in order to associate an incoming delivery report (DR) to the correct MT message.
+
+[ngrok](/references/ngrok.md) is a great tool to use when testing MO / DR messages locally. 
 
 For description of delivery report parameters see [this section](/sections/Interfaces/Common.md#parameters-for-delivery-reports-dr).
 

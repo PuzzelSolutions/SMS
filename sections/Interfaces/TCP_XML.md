@@ -18,7 +18,7 @@ If there is no activity on an established connection for a certain time interval
 
 When a connection is established between the client and the server, the server will wait for the client to send a request. The request must be XML and formatted according to the correct schema, and the encoding used must be UTF-8. The server will parse the request and send a response to the client. The client should always wait for a response before sending another request.
 
-Delivery Reports are not returned over TCP in this mode, but may be configured to be sent asynchronously to a customer over a HTTP endpoint using GET or POST.
+Delivery Reports are not returned over TCP in this mode, but may be configured to be sent asynchronously to a your endpoint over a HTTP(S) connection using GET or POST.
 
 It is recommended that each request should contain no more than 1000 messages. If you need to send a larger batch, it should be split into several XML requests.
 

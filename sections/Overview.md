@@ -35,7 +35,7 @@ To send SMS messages to end-users, you need to integrate with one of the APIs vi
 
 Due to the flexibility of the REST / SOAP interfaces, we generally recommend that you choose to integrate with one of these endpoints if possible.
 
-To receive SMS messages (MO) or delivery reports you need to provide a service endpoint that can receive HTTP GET or POST requests. As an alternative, you can also receive MO messages as email messages (SMTP) or using the SMPP protocol.
+To receive SMS messages (MO) or delivery reports (DR) you need to provide a service endpoint that can receive HTTP GET or POST requests. As an alternative, you can also receive MO messages as email messages (SMTP) or using the SMPP protocol.
 
 #####High level sequence diagram for basic SMS Gateway operations
 ![Figure 1: High-level sequence diagram for basic SMSGW operations](http://i.imgur.com/3CXClMd.jpg)

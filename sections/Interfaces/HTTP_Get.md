@@ -83,7 +83,7 @@ This is an asynchronous operation and you will need to implement a mechanism for
 
 [ngrok](/references/ngrok.md) is a great tool to use when testing MO / DR messages locally. 
 
-For description of delivery report parameters see [this section](/sections/Interfaces/Common.md#parameters-for-delivery-reports-dr).
+For description of delivery report parameters see [this section](/sections/Common.md#parameters-for-delivery-reports-dr).
 
 ### DR SMS Example using HTTP(S) GET
 

@@ -87,6 +87,7 @@ Since 2010, Intelecom Group and its subsidiaries have been fully owned by [Herku
 - Andreas Häber
 - Morten Trydal
 - Gunnar Grenlee
+- Kjetil Johannesen
 
 > **Note:** These documents replace the PDF only documentation which final version was _2.3.0_.
 

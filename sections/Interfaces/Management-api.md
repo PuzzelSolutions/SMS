@@ -3,7 +3,7 @@
 
 
 This API provides functionality to manage messages and receive status from the Gateway. Functionality is divided into functional groups described below.
-The API is available from web service and REST interfaces, similar to the SMS sending API. It also uses the same triplet of service identifiers (service id, username and password) as explained [here](sections/Common.md#common-parameters).
+The API is available from web service and REST interfaces, similar to the SMS sending API. It also uses the same triplet of service identifiers (service id, username and password) as explained [here](/sections/Common.md#common-parameters).
 
 ## Interfaces for using the management API
 

@@ -8,7 +8,7 @@ The content provider may invoke the SMS Gateway (SMSGW) using HTTP GET queries. 
 
 Also note that due to URL length limitations, this interface is not optimal for batch sending (many recipients in one request).
 
-The HTTP(S) GET APIs support both sending SMS (MT), receiving SMS (MO) and delivery reports (DR). Please see [here](/sections/Interfaces/Common.md) for information about the available message parameters.
+The HTTP(S) GET APIs support both sending SMS (MT), receiving SMS (MO) and delivery reports (DR). Please see [here](/sections/Common.md) for information about the available message parameters.
 
 ## Encoding
 
@@ -66,7 +66,7 @@ If you need to add a firewall rule, all requests will originate from IP: 212.89.
 
 [ngrok](/references/ngrok.md) is a great tool to use when testing MO / DR messages locally. 
 
-For description of incoming SMS (MO) parameters see [this section](sections/Interfaces/Common.md#parameters-for-incoming-mo-messages).
+For description of incoming SMS (MO) parameters see [this section](/sections/Common.md#parameters-for-incoming-mo-messages).
 
 ### MO SMS Example using HTTP(S) GET
 

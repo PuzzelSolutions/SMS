@@ -2,7 +2,7 @@
 
 [Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Interfaces-general.md) -  [Next section](/sections/Interfaces/Soap.md)
 
-This section describes how to integrate towards the Intelecom SMS Gateway REST API. The Rest API supports both sending SMS (MT), receiving SMS (MO) and delivery reports (DR). Please see [here](/sections/Interfaces/Common.md) for information about the available message parameters.
+This section describes how to integrate towards the Intelecom SMS Gateway REST API. The Rest API supports both sending SMS (MT), receiving SMS (MO) and delivery reports (DR). Please see [here](/sections/Common.md) for information about the available message parameters.
 
 ## Sending messages (MT)
 
@@ -125,7 +125,7 @@ If you need to add a firewall rule, all requests will originate from IP: 212.89.
 
 [ngrok](/references/ngrok.md) is a great tool to use when testing MO / DR messages locally. 
 
-For description of incoming SMS (MO) parameters see [this section](sections/Interfaces/Common.md#parameters-for-incoming-mo-messages).
+For description of incoming SMS (MO) parameters see [this section](/sections/Common.md#parameters-for-incoming-mo-messages).
 
 ### HTTP POST example with JSON formatted data
 

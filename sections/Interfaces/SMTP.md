@@ -23,7 +23,7 @@ The email address to send incoming SMS messages to will need to be provided to I
 
 The SMS message content will come in the email body, but is also highly configurable.
 
-By saying highly configurable, we mean that any field from [this section](sections/Interfaces/Common.md#parameters-for-incoming-mo-messages) can be substituted in any of the fields in the email. 
+By saying highly configurable, we mean that any field from [this section](/sections/Common.md#parameters-for-incoming-mo-messages) can be substituted in any of the fields in the email. 
 
 Example: 
 

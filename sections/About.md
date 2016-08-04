@@ -70,12 +70,24 @@ It is possible to define the validity period of each message when sending SMS me
 
 You can specify the content of the SMS message by using the “content” parameter. For text messages, the max length of a single message is 160 characters. If you provide text that is longer than 160 characters, the SMSGW will automatically split the message into concatenated text messages. When SMS messages are concatenated, some of the SMS payload is needed for the UDH, resulting in the max message length for each concatenated message being 153 characters. The Intelecom platform allows a maximum of six concatenated messages, meaning that the maximum character length of the content field is 918 characters (153 x 6). The GSM specification allows for a much higher number of concatenated messages, but because of restrictions in some of the MNO SMSC's, the max limit of six concatenated messages had to be included.
 
+#### Valid characters
 SMS default encoding uses 7 bits to handle a character. The GSM 03.38 specification defines the valid character sets, this being the “Basic Character Set” and the corresponding extension table as depicted below:
 
 <p align="center">
 ![Valid 7-bit GSM characters](http://i.imgur.com/Otl1whV.png)
 
-If you use characters from the extension table, for example the EUR character (€), an escape character is needed in addition to the character from the extension table. This means that the EUR character counts as two characters and you will have less space available in the message. 
+If you use characters from the extension table, for example the EUR character (€), an escape character is needed in addition to the character from the extension table. This means that the EUR character counts as two characters and you will have less space available in the message.
+
+#### Invalid characters
+If the content payload contains characters that are not valid the default behaviour of the gateway is to return an error code and not send the message. This means that the customer should verify the message content before it is sent.
+This behaviour can be customized for each service. Currently we offer these parsing types:
+<table>
+<tr><th>Type</th><th>Description</th></tr>	
+<tr><td>None</td><td>This is the default behaviour. Any invalid characters will lead to an error and the message will not be sent.</td></tr>	
+<tr><td>Remove characters</td><td>Any invalid characters will be removed and the message will be sent. E.g. "Testing: Клавдии áàóòúù" will result in "Testing àòù"</td></tr>	
+<tr><td>Replace characters</td><td>Any invalid characters will be replaced or removed and the message will be sent. Characters that will be replaced are "accented" characters, e.g. "Testing Клавдии áàóòúù " will result in "Testing aàoòuù".</td></tr>
+</table>
+You can contact Intelecom to select a specific parsing type for your service. Parsing type can also be set for each message with the <a href="https://github.com/Intelecom/sms/blob/master/sections/Common.md#parameters">parsing-type parameter.</a>
 
 ### Sessions
 
@@ -135,3 +147,27 @@ E.g., the following send window indicates that the messages can be sent on Augus
 If it is not possible to send the message within this timeframe, it will be discarded.
 
 Specifying a time window as in the previous example would only be useful for very large batches of messages that that would take a long time to process. If you need control over how long a specific message is valid, then take a look at the message validity parameter
+
+### Spam filter
+
+To avoid situations where an end user or an M2M device receives loads of messages because of a fault the SMS Gateway implements a spam filter that filters both outgoing and incoming messages. The spam filter keeps track of the number of messages sent and received for all MSISDs and services. If a service sends or receives too many messages to/from a MSISDN within a time frame it will block the message.
+
+The spam filter should pick up situation where a customer ends up sending large amounts of messages to the same MSISDN because of faults/bugs in the system. It should also pick up situation where a service ends up communicating with an M2M device that is configured to answer all incoming SMS messages and goes into a loop (ping pong).
+
+If a message sent to the SMS Gateway is picked up by the spam filter it will result in an error with <a hfref=” https://github.com/Intelecom/sms/blob/master/sections/Common.md#message-status”>an appropriate status code</a>, and no message will be sent.
+
+The spam filter can be disabled for a service. If your service needs to send/receive many messages to/from the same MSISDN you should contact Intelecom.
+
+### Message identifiers
+
+The SMS Gateway will generate a unique identifier (messageId) for every message sent to the platform. The SMS Gateway will also generate a unique batch identifier (batchReference) for every request with one or more messages. These IDs follows each message through the platform.
+Both the messageId and the batchReference will be sent back in the delivery reports.
+The client should store and/or log both the messageId and the batchReference. This will make it easier to track down specific messages later. If you have opted to receive delivery reports you will need the message ID to match the report with the original message.
+#### Customer generated IDs
+It is also possible for the customer create their own IDs. Each message can be given a unique ID (clientReference) and each batch can be given a unique ID (batchReference). The batchReference will replace the batchReference generated by the SMS Gateway, while the clientReference will exist together with the messageId created by the SMS Gateway.
+These IDs will also sent back in the delivery reports.
+#### Retry logic and fault situations
+When a client connects to the SMS Gateway certain faults can lead to situations where the client does not know if the request was processed or not. This mean that the client cannot know if the messages have been sent, and that retrying the operation could lead to duplicate messages. Such situation will typically be network related, e.g. timeouts or a broken connection. 
+If the client chooses to create their own IDs for the messages it is possible check manually if the messages was received by the SMS Gateway.
+The gateway can also check that the customer generated IDs are unique. [describe the logic]. This functionality is turned off by default and has to be enabled by Intelecom for the service. If this is enabled the SMS Gateway will generate a fault when it receives a duplicate clientReference. This makes it possible to create retry logic in situations where the client does not know if the request was processed or not.
+

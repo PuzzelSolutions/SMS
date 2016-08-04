@@ -290,6 +290,7 @@ This is an asynchronous operation and you will need to implement a mechanism for
 
 <table>
 <tr><th>Parameter Name</th><th>Data Type</th><th>Description</th></tr>	
+<tr><td>messageId</td><td>String</td><td>The messageid of the original message this report is for</td></tr>
 <tr><td>customerbatchreference</td><td>String</td><td>The batchReference of the MT message. A system batch reference is generated if you do not specify one when sending the MT message.</td></tr>
 <tr><td>customermessagereference</td><td>String</td><td>The clientReference you specified in the MT message. 
 </td></tr>	

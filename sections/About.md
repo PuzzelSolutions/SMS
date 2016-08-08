@@ -151,7 +151,7 @@ Specifying a time window as in the previous example would only be useful for ver
 ### Spam filter
 
 To avoid situations where a recipient receives a large number of messages by mistake, the SMS Gateway implements a filter that keeps track of the number of messages per service sent and received for all MSISDN. 
-If a message sent to the SMS Gateway violates the rules implemented in the spam filter it will result in an <a hfref=” https://github.com/Intelecom/sms/blob/master/sections/Common.md#message-status”>error accompanied by a status code</a>, and no message will be sent.
+If a message sent to the SMS Gateway violates the rules implemented in the spam filter it will result in an [error accompanied by a status code](/sections/Common.md#message-status), and no message will be sent.
 
 Some services needs to be able to send many messages to the same MSISDN within a short timeframe, and to accommodate for such cases it is possible to disable the spam filter. To disable the spam filter for a service you need to contact Intelecom.
 
@@ -167,4 +167,4 @@ This functionality must be turned on for the service.
 
 ### Retry logic and fault situations
 When a client connects to the SMS Gateway certain faults can lead to situations where the client does not know if the request was processed or not. This means that the client cannot know if the messages have been sent, and that retrying the operation could lead to duplicate messages being sent. Such situation will typically be network related, e.g. timeouts or a broken connection.
-If the client [generates its own identifiers](#Customer generated identifiers) and [validation is enabled](# Validations of customer generated identifiers), it is possible to retry the operation and be certain that no duplicates will be sent.
+If the client [generates its own identifiers](#customer-generated-identifiers) and [validation is enabled](#validations-of-customer-generated-identifiers), it is possible to retry the operation and be certain that no duplicates will be sent.

@@ -73,8 +73,7 @@ Example: 01bxmt7f8b8h3zkwe2vg
 <tr><td>autoDetectEncoding</td><td>Boolean</td><td>Currently not in use. Default value is false.<br/><br/>
 Example: true
 </td><td>No</td></tr>
-<tr><td>safeRemoveNonGsmCharacters</td><td>Boolean</td><td>If set to true, the SMSGW will remove or safely substitute invalid characters in the message content instead of rejecting the message. See <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#message-content">here</a> for more information. Default value is false.<br/><br/>
-Example: true
+<tr><td><strike>safeRemoveNonGsmCharacters</strike></td><td><em>Deprecated</em></td><td>Check the documentation on <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#message-content">message content</a> for more information.
 </td><td>No</td></tr>
 <tr><td>originatorSettings</td><td>Composite object</td><td>Used to specify the originator. See description below.<br/><br/>
 Uses values from service configuration unless specified.
@@ -186,6 +185,12 @@ This functionality may be useful in case of emergencies or if you want to send c
 
 Also note that this functionality is only guaranteed to work for messages that are free of charge to receive for the end user. Many MNOs does not allow this setting for premium SMS. 
 </td></tr>		
+<tr><td>parsing-type</td><td>String</td><td>Valid values: NONE, SAFE_REMOVE_NON_GSM, SAFE_REMOVE_NON_GSM_WITH_REPLACE
+
+The parsing type can be set on the service level and it is recommended only specify this parameter if you need to override it.
+
+See the chapter on <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#message-content">message content</a> for further details about the different parsing types.
+</td></tr>
 </table> 
 
 ## Response parameters
@@ -213,6 +218,8 @@ Reference ID for the request. Either the value provided by the client in the req
 <tr><td>ILLEGAL_SERVICE</td><td>4</td><td>An illegal service was tried.</td></tr>	
 <tr><td>SYNTAX_ERROR</td><td>5</td><td>The request contained syntax errors.</td></tr>
 <tr><td>INTERNAL_ERROR</td><td>6</td><td>An internal error occured in the gateway.</td></tr>
+<tr><td>QUOTA_EXCEEDED</td><td>24</td><td>To many messages sent to the same MSISDN. Message is queued but will not be sent before manually approved.</td></tr>
+<tr><td>ERROR_NOT_UNIQUE</td><td>25</td><td>Duplicate message error.</td></tr>
 </table></td></tr>
 <tr><td>statusmessage</td><td>String</td><td>Textual information about status, e.g. which parameter failed
 </td></tr>		
@@ -283,6 +290,7 @@ This is an asynchronous operation and you will need to implement a mechanism for
 
 <table>
 <tr><th>Parameter Name</th><th>Data Type</th><th>Description</th></tr>	
+<tr><td>messageId</td><td>String</td><td>The messageid of the original message this report is for</td></tr>
 <tr><td>customerbatchreference</td><td>String</td><td>The batchReference of the MT message. A system batch reference is generated if you do not specify one when sending the MT message.</td></tr>
 <tr><td>customermessagereference</td><td>String</td><td>The clientReference you specified in the MT message. 
 </td></tr>	

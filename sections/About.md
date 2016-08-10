@@ -163,7 +163,7 @@ It is also possible to create identifiers on the customer side. Each message can
 #### Validations of customer generated identifiers
 The message identifiers set by the customer in the request are not validated by default so there is no requirement for them to be unique. It is possible to have the gateway validate that the identifiers are unique for each service. The SMS Gateway will check that an identifier is unique and give an [error message](/sections/Common.md#message-status) if it is not.
 To avoid keeping track of too many customer generated message identifiers the SMS Gateway will only keep track of message identifiers generated within the last hour.
-This functionality must be turned on for the service.
+This functionality must be turned on for the service. Please contact Intelecom support in order to activate this.
 
 ### Retry logic and fault situations
 When a client connects to the SMS Gateway certain faults can lead to situations where the client does not know if the request was processed or not. This means that the client cannot know if the messages have been sent, and that retrying the operation could lead to duplicate messages being sent. Such situation will typically be network related, e.g. timeouts or a broken connection.

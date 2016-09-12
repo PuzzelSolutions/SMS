@@ -9,7 +9,7 @@ Well - that depends on you, may we suggest:
 
 - Browsing our [list of libraries](#list-of-official-libraries) you can import into your existing code - A good choice if you want to just dive right into coding.
 - Learn how our documentation is [structured](#how-the-documentation-is-structured)
-- Read our [introduction to A2P SMS and SMS Gateways](sections/About.md) - a good starting point if you have not used a SMS Gateway before.
+- Read our [introduction to A2P SMS and SMS Gateways](sections/about.md) - a good starting point if you have not used a SMS Gateway before.
 - Read the [API documentation](/sections/interfaces-general.md) for one of our specific interfaces
 - [Learn about Intelecom](#about-intelecom), our history in providing SMS services and other related products.
 - Find out [how to register an account](#registering-an-account) with Intelecom to start using the SMS Gateway services.

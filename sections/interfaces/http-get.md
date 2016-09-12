@@ -1,14 +1,14 @@
 # HTTP GET API
 
-[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Interfaces/Soap.md) -  [Next section](/sections/Interfaces/SMTP.md)
+[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces/soap.md) -  [Next section](/sections/interfaces/smtp.md)
 
 This section describes how to integrate towards the Intelecom SMS Gateway HTTP(S) GET API. 
 
-The content provider may invoke the SMS Gateway (SMSGW) using HTTP GET queries. Though not as flexible as its SOAP / REST counterparts, it is a very easy protocol to integrate with, and to send simple test messages from your browser for example. If you need to integrate a third party product to SMS, this protocol is often the only option. However, as mentioned earlier, we recommend that you integrate using the [REST API](/sections/Interfaces/Rest.md) if you have the possibility to do so. 
+The content provider may invoke the SMS Gateway (SMSGW) using HTTP GET queries. Though not as flexible as its SOAP / REST counterparts, it is a very easy protocol to integrate with, and to send simple test messages from your browser for example. If you need to integrate a third party product to SMS, this protocol is often the only option. However, as mentioned earlier, we recommend that you integrate using the [REST API](/sections/interfaces/rest.md) if you have the possibility to do so. 
 
 Also note that due to URL length limitations, this interface is not optimal for batch sending (many recipients in one request).
 
-The HTTP(S) GET APIs support both sending SMS (MT), receiving SMS (MO) and delivery reports (DR). Please see [here](/sections/Common.md) for information about the available message parameters.
+The HTTP(S) GET APIs support both sending SMS (MT), receiving SMS (MO) and delivery reports (DR). Please see [here](/sections/common.md) for information about the available message parameters.
 
 ## Encoding
 
@@ -29,7 +29,7 @@ The HTTP(S) GET Gateway is accepting GET requests on the URL:
 
 Parameter names are case sensitive. For example for the Serviceid parameter, the correct spelling is “serviceId“. Incorrect examples are “serviceid”, “serviceID”, “SERVICEID”, “serViceID”, etc.
 
-[Common parameters](/sections/Common.md#common-parameters) do not need any prefix, e.g., “username” and “serviceId”.
+[Common parameters](/sections/common.md#common-parameters) do not need any prefix, e.g., “username” and “serviceId”.
 
 A dot (“.”) notation is used to specify nested properties, such as message[0].settings.priority.
 
@@ -54,7 +54,7 @@ Similar to the other interfaces the HTTP(S) GET interface supports sending multi
 
 ### Response example
 
-The response format is of content-type "text/xml" and is the same as for the REST interface described [here](/sections/Interfaces/Rest.md#xml-response-example). 
+The response format is of content-type "text/xml" and is the same as for the REST interface described [here](/sections/interfaces/rest.md#xml-response-example). 
 
 ## Receiving messages (MO)
 
@@ -66,7 +66,7 @@ If you need to add a firewall rule, all requests will originate from IP: 212.89.
 
 [ngrok](/references/ngrok.md) is a great tool to use when testing MO / DR messages locally. 
 
-For description of incoming SMS (MO) parameters see [this section](/sections/Common.md#parameters-for-incoming-mo-messages).
+For description of incoming SMS (MO) parameters see [this section](/sections/common.md#parameters-for-incoming-mo-messages).
 
 ### MO SMS Example using HTTP(S) GET
 
@@ -83,7 +83,7 @@ This is an asynchronous operation and you will need to implement a mechanism for
 
 [ngrok](/references/ngrok.md) is a great tool to use when testing MO / DR messages locally. 
 
-For description of delivery report parameters see [this section](/sections/Common.md#parameters-for-delivery-reports-dr).
+For description of delivery report parameters see [this section](/sections/common.md#parameters-for-delivery-reports-dr).
 
 ### DR SMS Example using HTTP(S) GET
 
@@ -95,5 +95,5 @@ The attributes in the SMS-DR message will substitute the corresponding parts of 
 
 The CP must respond to the HTTP request with a HTTP 200 header response. Any other header responses cause a retry of delivery.
 
-This is the same as for the REST API, please see [this section](/sections/Interfaces/Rest.md#http-response-for-incoming-sms-mo-and-delivery-report-dr-messages) for more information.
+This is the same as for the REST API, please see [this section](/sections/interfaces/rest.md#http-response-for-incoming-sms-mo-and-delivery-report-dr-messages) for more information.
 

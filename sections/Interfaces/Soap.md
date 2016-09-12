@@ -1,8 +1,8 @@
 # SOAP API
 
-[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Interfaces/Rest.md) -  [Next section](/sections/Interfaces/HTTP_Get.md)
+[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces/rest.md) -  [Next section](/sections/interfaces/http-get.md)
 
-This section describes how to integrate towards the Intelecom SMS Gateway SOAP (web services) API. The SOAP API only support sending SMS (MT), meaning that receiving SMS (MO) and delivery reports (DR) will have to be implemented using protocols that support these message types such as HTTP GET or HTTP POST with JSON or XML. An overview over each protocols capabilities are shown [here](/sections/Interfaces-general.md) 
+This section describes how to integrate towards the Intelecom SMS Gateway SOAP (web services) API. The SOAP API only support sending SMS (MT), meaning that receiving SMS (MO) and delivery reports (DR) will have to be implemented using protocols that support these message types such as HTTP GET or HTTP POST with JSON or XML. An overview over each protocols capabilities are shown [here](/sections/interfaces-general.md) 
 
 Please see [here](/sections/Common.md) for information about the available message parameters.
 

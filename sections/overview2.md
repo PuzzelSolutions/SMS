@@ -1,22 +1,22 @@
 #Overview
-[Back to main page](https://github.com/Intelecom/sms/) - [Next section](/sections/About.md)
+[Back to main page](https://github.com/Intelecom/sms/) - [Next section](/sections/about.md)
 
 ## Table of Contents
 
-- [Overview](/sections/Overview.md) (This section)
-- [About A2P SMS and SMS Gateways](/sections/About.md)
-- [Common SMS Gateway documentation](/sections/Common.md) - information relevant to most of the interfaces.
-- [Interface specifications](Interfaces-general.md)
-	- [REST API](/sections/Interfaces/Rest.md)
-	- [SOAP API](/sections/Interfaces/Soap.md)
-	- [HTTP GET API](/sections/Interfaces/HTTP_Get.md)
-	- [SMTP SMS GW](/sections/Interfaces/SMTP.md)
-	- [TCP sockets / XML](/sections/Interfaces/TCP_XML.md)
-	- [SMPP](/sections/Interfaces/SMPP.md)
-	- [Management API](/sections/Interfaces/Management-api.md)
-	- [Value-added services for MO messages](/sections/Interfaces/VAS.md)
+- [Overview](/sections/overview.md) (This section)
+- [About A2P SMS and SMS Gateways](/sections/about.md)
+- [Common SMS Gateway documentation](/sections/common.md) - information relevant to most of the interfaces.
+- [Interface specifications](interfaces-general.md)
+	- [REST API](/sections/interfaces/rest.md)
+	- [SOAP API](/sections/interfaces/soap.md)
+	- [HTTP GET API](/sections/interfaces/http-get.md)
+	- [SMTP SMS GW](/sections/interfaces/smtp.md)
+	- [TCP sockets / XML](/sections/interfaces/tcp-xml.md)
+	- [SMPP](/sections/Interfaces/smpp.md)
+	- [Management API](/sections/Interfaces/management-api.md)
+	- [Value-added services for MO messages](/sections/interfaces/vas.md)
 - Library documentation - [Each library](#list-of-official-libraries) provides basic "getting started" in each repo (readme.md).
-- How to [get in touch with us](/sections/Contact.md)?
+- How to [get in touch with us](/sections/contact.md)?
 
 ##Introduction
 This documentation describes the functionality of, and explains how to integrate with, the Intelecom SMS Gateway (SMSGW). 
@@ -40,7 +40,7 @@ To receive SMS messages (MO) or delivery reports (DR) you need to provide a serv
 #####High level sequence diagram for basic SMS Gateway operations
 ![Figure 1: High-level sequence diagram for basic SMSGW operations](http://i.imgur.com/3CXClMd.jpg)
 
-Additionally, the Gateway provides a Management API to manage messages. A description of this API is given [here](/sections/Management.api.md).
+Additionally, the Gateway provides a Management API to manage messages. A description of this API is given [here](/sections/interfaces/management-api.md).
 
 ##Abbreviations
 

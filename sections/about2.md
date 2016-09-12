@@ -1,6 +1,6 @@
 # About A2P SMS and SMS Gateways
 
-[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Overview.md) -  [Next section](/sections/Common.md)
+[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/overview.md) -  [Next section](/sections/common.md)
 
 SMS is best known for P2P messaging where SMS messages are exchanged between two mobile phones. Chances are that you in the last couple of months also have recevied an SMS that was sent from a machine. This may be a confirmation of a taxi booking, a one-time password for access, or a notification of your next dentist appointment. If so, you have received an A2P SMS message. 
 
@@ -36,7 +36,7 @@ In Norway, the supported premium rates are from 1,- to 1000,- in steps of 1 NOK.
 
 Example: To send a billing message with a price of 2 NOK to a Norwegian recipient, set the price parameter to the value of 200. 
 
-In some countries, there are also different business models depending on what product you are charging for.These business models decide the divident of the payout, i.e. the operator's cut. For example the business model "physical goods" have different payout than the business model "donation". Each service that is to use premium SMS also needs to be approved to use a given business model by the Mobile Network Operators. The business model is set by specifying a service code and category as defined by the mobile network operators for each message.  You can find the listing of the Mobile Network Operator service codes [here](/references/ServiceCodes.md). 
+In some countries, there are also different business models depending on what product you are charging for.These business models decide the divident of the payout, i.e. the operator's cut. For example the business model "physical goods" have different payout than the business model "donation". Each service that is to use premium SMS also needs to be approved to use a given business model by the Mobile Network Operators. The business model is set by specifying a service code and category as defined by the mobile network operators for each message.  You can find the listing of the Mobile Network Operator service codes [here](/references/servicecodes.md). 
 
 ### Message Originator
 
@@ -87,7 +87,7 @@ This behaviour can be customized for each service. Currently we offer these pars
 <tr><td>Remove characters</td><td>Any invalid characters will be removed and the message will be sent. E.g. "Testing: Клавдии áàóòúù" will result in "Testing àòù"</td></tr>	
 <tr><td>Replace characters</td><td>Any invalid characters will be replaced or removed and the message will be sent. Characters that will be replaced are "accented" characters, e.g. "Testing Клавдии áàóòúù " will result in "Testing aàoòuù".</td></tr>
 </table>
-You can contact Intelecom to select a specific parsing type for your service. Parsing type can also be set for each message with the <a href="https://github.com/Intelecom/sms/blob/master/sections/Common.md#parameters">parsing-type parameter.</a>
+You can contact Intelecom to select a specific parsing type for your service. Parsing type can also be set for each message with the <a href="https://github.com/Intelecom/sms/blob/master/sections/common.md#parameters">parsing-type parameter.</a>
 
 ### Sessions
 
@@ -151,17 +151,17 @@ Specifying a time window as in the previous example would only be useful for ver
 ### Spam filter
 
 To avoid situations where a recipient receives a large number of messages by mistake, the SMS Gateway implements a filter that keeps track of the number of messages per service sent and received for all MSISDN. 
-If a message sent to the SMS Gateway violates the rules implemented in the spam filter it will result in an [error accompanied by a status code](/sections/Common.md#message-status), and no message will be sent.
+If a message sent to the SMS Gateway violates the rules implemented in the spam filter it will result in an [error accompanied by a status code](/sections/common.md#message-status), and no message will be sent.
 
 Some services needs to be able to send many messages to the same MSISDN within a short timeframe, and to accommodate for such cases it is possible to disable the spam filter. To disable the spam filter for a service you need to contact Intelecom.
 
 ### Message identifiers
-All messages sent through the SMS Gateway is assigned a unique identifier named [messageId](/sections/Common.md#response-parameters). Each request made to the SMS Gateway will also be assigned a unique identifier named [batchReference](/sections/Common.md#response-parameters).
-These identifiers follow the messages through the platform and makes it possible to track each individual message. These identifiers is also used in [the delivery reports](/sections/Common.md#receiving-sms-delivery-reports-dr).
+All messages sent through the SMS Gateway is assigned a unique identifier named [messageId](/sections/common.md#response-parameters). Each request made to the SMS Gateway will also be assigned a unique identifier named [batchReference](/sections/common.md#response-parameters).
+These identifiers follow the messages through the platform and makes it possible to track each individual message. These identifiers is also used in [the delivery reports](/sections/common.md#receiving-sms-delivery-reports-dr).
 #### Customer generated identifiers
-It is also possible to create identifiers on the customer side. Each message can be given a unique identifier named [clientReference](/sections/Common.md#basic-message-parameters). And each request can be given a unique identifier named [batchReference](/sections/Common.md#common-parameters) (this will overwrite the default batchReference value from the SMS Gateway).
+It is also possible to create identifiers on the customer side. Each message can be given a unique identifier named [clientReference](/sections/common.md#basic-message-parameters). And each request can be given a unique identifier named [batchReference](/sections/common.md#common-parameters) (this will overwrite the default batchReference value from the SMS Gateway).
 #### Validations of customer generated identifiers
-The message identifiers set by the customer in the request are not validated by default so there is no requirement for them to be unique. It is possible to have the gateway validate that the identifiers are unique for each service. The SMS Gateway will check that an identifier is unique and give an [error message](/sections/Common.md#message-status) if it is not.
+The message identifiers set by the customer in the request are not validated by default so there is no requirement for them to be unique. It is possible to have the gateway validate that the identifiers are unique for each service. The SMS Gateway will check that an identifier is unique and give an [error message](/sections/common.md#message-status) if it is not.
 To avoid keeping track of too many customer generated message identifiers the SMS Gateway will only keep track of message identifiers generated within the last hour.
 This functionality must be turned on for the service. Please contact Intelecom support in order to activate this.
 

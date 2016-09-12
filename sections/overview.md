@@ -15,7 +15,7 @@
 	- [SMPP](/sections/interfaces/smpp.md)
 	- [Management API](/sections/interfaces/management-api.md)
 	- [Value-added services for MO messages](/sections/interfaces/vas.md)
-- Library documentation - [Each library](#list-of-official-libraries) provides basic "getting started" in each repo (readme.md).
+- Library documentation - [Each library](/README.md#list-of-official-libraries) provides basic "getting started" in each repo (readme.md).
 - How to [get in touch with us](/sections/contact.md)?
 
 ##Introduction

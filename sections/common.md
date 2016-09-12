@@ -1,6 +1,6 @@
 # Common SMS Gateway documentation 
 
-[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/About.md) - [Next section](/sections/Interfaces-general.md)
+[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/about.md) - [Next section](/sections/interfaces-general.md)
 
 This section describes all relevant parameters used in the Intelecom SMS Gateway which is common for all interfaces. 
 
@@ -25,8 +25,8 @@ The following lists of parameters are used when sending messages in either of ou
 <tr><th>Parameter Name</th><th>Data Type</th><th>Description</th><th>Mandatory</th></tr>	
 <tr><td>recipient</td><td>String</td><td>The MSISDN of the recipient. The format should follow the ITU-T E.164 standard with a + prefix. Example: +4792000001.<br/>
 <b>Note:</b> This must be a valid MSISDN, meaning <u>mobile phone number</u>. E.g. for Norway these numbers start with 4, 9, 58 or 59.</td><td>Yes</td></tr>	
-<tr><td>content</td><td>String</td><td>The message payload to send, typically the message text. Read <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#message-content">here</a> for more details.</td><td>Yes</td></tr>		
-<tr><td>price</td><td>Integer</td><td>The cost for the recipient to receive the message. In lowest monetary unit. See <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#pricing---non-premium-and-premium-messages-cpa--gas">here</a> for more details.<br/>
+<tr><td>content</td><td>String</td><td>The message payload to send, typically the message text. Read <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#message-content">here</a> for more details.</td><td>Yes</td></tr>		
+<tr><td>price</td><td>Integer</td><td>The cost for the recipient to receive the message. In lowest monetary unit. See <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#pricing---non-premium-and-premium-messages-cpa--gas">here</a> for more details.<br/>
 For example a value of 200 means 2 NOK in Norway.
 </td><td>No</td></tr>
 <tr><td>clientReference</td><td>String</td><td>Arbitrary client reference ID that will be returned in the message response.</td><td>No</td></tr>	
@@ -45,7 +45,7 @@ For example a value of 200 means 2 NOK in Norway.
 </ol>
 Example: 2<br/><br/>Uses value from service configuration unless specified. 
 </td><td>No</td></tr>	
-<tr><td>validity</td><td>Integer</td><td>Specifies the TTL (time to live) for the message, i.e. how long before the message times out in cases where it cannot be delivered to a handset. See table <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#validity-period">here</a> for valid values.<br/><br/>
+<tr><td>validity</td><td>Integer</td><td>Specifies the TTL (time to live) for the message, i.e. how long before the message times out in cases where it cannot be delivered to a handset. See table <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#validity-period">here</a> for valid values.<br/><br/>
 Example: 173
 </td><td>No</td></tr>		
 <tr><td>differentiator</td><td>String</td><td>Arbitrary string defined by the client to enable grouping messages in certain statistic reports.<br/><br/>
@@ -64,16 +64,16 @@ IMPORTANT: If the service is a subscription service, all premium rate messages m
 </ul>
 Example: 18
 </td><td>No</td></tr>	
-<tr><td>newSession</td><td>Boolean</td><td>Used to start a new session. Read <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#sessions">here</a> for more information.<br/><br/>
+<tr><td>newSession</td><td>Boolean</td><td>Used to start a new session. Read <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#sessions">here</a> for more information.<br/><br/>
 Example: true
 </td><td>No</td></tr>
-<tr><td>sessionId</td><td>String</td><td>Used to continue an existing session. Read <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#sessions">here</a> for more information.<br/><br/>
+<tr><td>sessionId</td><td>String</td><td>Used to continue an existing session. Read <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#sessions">here</a> for more information.<br/><br/>
 Example: 01bxmt7f8b8h3zkwe2vg
 </td><td>No</td></tr>
 <tr><td>autoDetectEncoding</td><td>Boolean</td><td>Currently not in use. Default value is false.<br/><br/>
 Example: true
 </td><td>No</td></tr>
-<tr><td><strike>safeRemoveNonGsmCharacters</strike></td><td><em>Deprecated</em></td><td>Check the documentation on <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#message-content">message content</a> for more information.
+<tr><td><strike>safeRemoveNonGsmCharacters</strike></td><td><em>Deprecated</em></td><td>Check the documentation on <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#message-content">message content</a> for more information.
 </td><td>No</td></tr>
 <tr><td>originatorSettings</td><td>Composite object</td><td>Used to specify the originator. See description below.<br/><br/>
 Uses values from service configuration unless specified.
@@ -95,7 +95,7 @@ Sends immediately unless specified.
 
 <table>
 <tr><th>Parameter Name</th><th>Data Type</th><th>Description</th><th>Mandatory</th></tr>	
-<tr><td>originatorType</td><td>String</td><td>Specifies the type of originator. See <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#message-originator">this section</a> for more information. <br/><br/>
+<tr><td>originatorType</td><td>String</td><td>Specifies the type of originator. See <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#message-originator">this section</a> for more information. <br/><br/>
 Valid values are:
 <ul>
 <li>INTERNATIONAL</li>
@@ -109,7 +109,7 @@ Example: +4799999999, Intelecom, 1960
 ### GAS settings
 <table>
 <tr><th>Parameter Name</th><th>Data Type</th><th>Description</th><th>Mandatory</th></tr>	
-<tr><td>serviceCode</td><td>String</td><td>Identifier for the category of Goods and services. See <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#pricing---non-premium-and-premium-messages-cpa--gas">this section</a> for more information.<br/><br/> See list of valid servicecodes for valid parameter values for service codes <a href="https://github.com/Intelecom/sms/blob/master/references/ServiceCodes.md">here</a>.<br/><br/>
+<tr><td>serviceCode</td><td>String</td><td>Identifier for the category of Goods and services. See <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#pricing---non-premium-and-premium-messages-cpa--gas">this section</a> for more information.<br/><br/> See list of valid servicecodes for valid parameter values for service codes <a href="https://github.com/Intelecom/sms/blob/master/references/servicecodes.md">here</a>.<br/><br/>
 Example: 05008</td><td>Yes</td></tr>
 <tr><td>description</td><td>String</td><td>Further details of the Goods and services. The description may occur on the end-user invoice (together with category) for certain Mobile Network Operators.
  <br/><br/>
@@ -119,7 +119,7 @@ Example: Aftenposten
 
 ### Send Window
 
-See <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#send-window">this section</a> for more information about send window.<br/>
+See <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#send-window">this section</a> for more information about send window.<br/>
 
 <table>
 <tr><th>Parameter Name</th><th>Data Type</th><th>Description</th><th>Mandatory</th></tr>	
@@ -189,7 +189,7 @@ Also note that this functionality is only guaranteed to work for messages that a
 
 The parsing type can be set on the service level and it is recommended only specify this parameter if you need to override it.
 
-See the chapter on <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#message-content">message content</a> for further details about the different parsing types.
+See the chapter on <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#message-content">message content</a> for further details about the different parsing types.
 </td></tr>
 </table> 
 
@@ -230,7 +230,7 @@ Reference ID for the request. Either the value provided by the client in the req
 </td></tr>
 <tr><td>messageId</td><td>String</td><td>Message identifier (used as reference for delivery reports).
 </td></tr>	
-<tr><td>sessionId</td><td>String</td><td>Session identifier for a session, see <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#sessions">here</a> for more information. Only returned if newSession parameter is set to true, or if a sessionid was specified.
+<tr><td>sessionId</td><td>String</td><td>Session identifier for a session, see <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#sessions">here</a> for more information. Only returned if newSession parameter is set to true, or if a sessionid was specified.
 <tr><td>sequenceIndex</td><td>Integer</td><td>The messages in the response will always be in the same order as in the request. The sequence index is a convenience counter starting at 1.</td></tr>	
 </table>  
 <br/>

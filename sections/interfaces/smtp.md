@@ -1,6 +1,6 @@
 #SMTP API
 
-[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Interfaces/SMTP.md) -  [Next section](/sections/Interfaces/TCP_XML.md)
+[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces/smtp.md) -  [Next section](/sections/interfaces/tcp-xml.md)
 
 The SMS gateway also provides email as an alternative channel for sending / receiving sms messages. This channel is limited in what kind of messages it can send and what parameters are accepted. 
 
@@ -23,7 +23,7 @@ The email address to send incoming SMS messages to will need to be provided to I
 
 The SMS message content will come in the email body, but is also highly configurable.
 
-By saying highly configurable, we mean that any field from [this section](/sections/Common.md#parameters-for-incoming-mo-messages) can be substituted in any of the fields in the email. 
+By saying highly configurable, we mean that any field from [this section](/sections/common.md#parameters-for-incoming-mo-messages) can be substituted in any of the fields in the email. 
 
 Example: 
 

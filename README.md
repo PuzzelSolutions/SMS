@@ -9,8 +9,8 @@ Well - that depends on you, may we suggest:
 
 - Browsing our [list of libraries](#list-of-official-libraries) you can import into your existing code - A good choice if you want to just dive right into coding.
 - Learn how our documentation is [structured](#how-the-documentation-is-structured)
-- Read our [introduction to A2P SMS and SMS Gateways](sections/About.md) - a good starting point if you have not used a SMS Gateway before.
-- Read the [API documentation](/sections/Interfaces-general.md) for one of our specific interfaces
+- Read our [introduction to A2P SMS and SMS Gateways](sections/about.md) - a good starting point if you have not used a SMS Gateway before.
+- Read the [API documentation](/sections/interfaces-general.md) for one of our specific interfaces
 - [Learn about Intelecom](#about-intelecom), our history in providing SMS services and other related products.
 - Find out [how to register an account](#registering-an-account) with Intelecom to start using the SMS Gateway services.
 
@@ -37,20 +37,20 @@ The documentation consists of different sections, starting with an overview / ta
 
 **Section list:**
 
-- [Overview](/sections/Overview.md) (Introduction and ToC)
-- [About A2P SMS and SMS Gateways](/sections/About.md)
-- [Common SMS Gateway documentation](/sections/Common.md) - information relevant to most of the interfaces.
-- [Interface specifications](Interfaces-general.md)
-	- [REST API](/sections/Interfaces/Rest.md)
-	- [SOAP API](/sections/Interfaces/Soap.md)
-	- [HTTP GET API](/sections/Interfaces/HTTP_Get.md)
-	- [SMTP SMS GW](/sections/Interfaces/SMTP.md)
-	- [TCP sockets / XML API](sections/Interfaces/TCP_XML.md)
-	- [SMPP](/sections/Interfaces/SMPP.md)
-	- [Management API](/sections/Interfaces/Management-api.md)
-	- [Value-added services for MO messages](/sections/Interfaces/VAS.md)
+- [Overview](sections/overview.md) (Introduction and ToC)
+- [About A2P SMS and SMS Gateways](sections/about.md)
+- [Common SMS Gateway documentation](sections/common.md) - information relevant to most of the interfaces.
+- [Interface specifications](sections/interfaces-general.md)
+	- [REST API](sections/interfaces/rest.md)
+	- [SOAP API](sections/interfaces/soap.md)
+	- [HTTP GET API](sections/interfaces/http-get.md)
+	- [SMTP SMS GW](sections/interfaces/smtp.md)
+	- [TCP sockets / XML API](sections/interfaces/tcp-xml.md)
+	- [SMPP](sections/interfaces/smpp.md)
+	- [Management API](sections/interfaces/management-api.md)
+	- [Value-added services for MO messages](sections/interfaces/vas.md)
 - Library documentation - [Each library](#list-of-official-libraries) provides a basic "getting started" in each repo (readme.md).
-- How to [get in touch with us](/sections/Contact.md)?
+- How to [get in touch with us](sections/contact.md)?
 
 We also provide reference documentation such as the SMPP specification and GSM specifications. 
 
@@ -63,7 +63,7 @@ To use the SMS Gateway you will need the URLs to our staging / production sites 
 - Serviceid
 
 
-If you do not already have an account and want to try out or order access, please do [contact us](/sections/Contact.md) for more information. We provide demo accounts for both live and emulated MNOs - no strings attached. 
+If you do not already have an account and want to try out or order access, please do [contact us](sections/contact.md) for more information. We provide demo accounts for both live and emulated MNOs - no strings attached. 
 
 For live accounts pricing is based on establishment, monthly subscription and traffic (per message) fees. 
 

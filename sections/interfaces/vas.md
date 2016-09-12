@@ -1,5 +1,5 @@
 #Value-added services for MO messages
-[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Interfaces/Management-api.md) 
+[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces/management-api.md) 
 
 It is possible to enable automatic retrieval of customer data and attach it to the incoming SMS messages. Currently the services offers directory inquiries and network lookup.
 

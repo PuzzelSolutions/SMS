@@ -1,6 +1,6 @@
 # TCP Socket / XML API
 
-[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Interfaces/SMTP.md) -  [Next section](/sections/Interfaces/SMPP.md)
+[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces/smtp.md) -  [Next section](/sections/interfaces/smpp.md)
 
 TCP provides a reliable point-to-point communication channel that client-server applications on the Internet can use to communicate with each other. To communicate over TCP, a client program and a server program establish a connection. Each program binds a socket to its end of the connection. To communicate, the client and the server each reads from and writes to the socket bound to the connection.
 
@@ -65,5 +65,5 @@ It is recommended that each request should contain no more than 1000 messages. I
 		</sms:response>
 	</rsl:result>
 
-For a list of possible status codes, see [here](/sections/Common.md#response-parameters).
+For a list of possible status codes, see [here](/sections/common.md#response-parameters).
 

@@ -1,6 +1,6 @@
 #SMPP API
 
-[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/Overview.md) - [Previous section](/sections/Interfaces/TCP_XML.md) -  [Next section](/sections/Interfaces/Management-api.md)
+[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces/tcp-xml.md) -  [Next section](/sections/interfaces/management-api.md)
 
 It is possible to integrate towards the Intelecom SMS gateway using the SMPP protocol.
 

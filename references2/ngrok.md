@@ -12,6 +12,6 @@ If everything is fine, you should see something like this:
 
 ![](http://i.imgur.com/vVbye9k.png)
 
-The forwarding URL generated can then be provisioned in the Intelecom extranet or by our support staff so that you receive actual MO SMS and DR from our SMS platform to your localhost. [Contact us](/sections/Contact.md) for more information regarding URL provisioning when integrating.
+The forwarding URL generated can then be provisioned in the Intelecom extranet or by our support staff so that you receive actual MO SMS and DR from our SMS platform to your localhost. [Contact us](/sections/contact.md) for more information regarding URL provisioning when integrating.
 
 See also [ngrok documentation](https://ngrok.com/docs) for much more details.

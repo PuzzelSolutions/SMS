@@ -1,6 +1,6 @@
 # Service codes
 
-The following service codes are valid. See <a href="https://github.com/Intelecom/sms/blob/master/sections/About.md#pricing---non-premium-and-premium-messages-cpa--gas">this section</a> for more information about service codes.
+The following service codes are valid. See [this section](/sections/about.md#pricing---non-premium-and-premium-messages-cpa--gas) for more information about service codes.
 
 <table>
 <tr><th>Service code</th><th>Description</th><th>Minimum price</th><th>Maximum price</th></tr>

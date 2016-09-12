@@ -4,16 +4,16 @@
 ## Table of Contents
 
 - [Overview](/sections/overview.md) (This section)
-- [About A2P SMS and SMS Gateways](/sections/about.md)
-- [Common SMS Gateway documentation](/sections/common.md) - information relevant to most of the interfaces.
+- [About A2P SMS and SMS Gateways](about.md)
+- [Common SMS Gateway documentation](common.md) - information relevant to most of the interfaces.
 - [Interface specifications](interfaces-general.md)
 	- [REST API](/sections/interfaces/rest.md)
 	- [SOAP API](/sections/interfaces/soap.md)
 	- [HTTP GET API](/sections/interfaces/http-get.md)
 	- [SMTP SMS GW](/sections/interfaces/smtp.md)
 	- [TCP sockets / XML](/sections/interfaces/tcp-xml.md)
-	- [SMPP](/sections/Interfaces/smpp.md)
-	- [Management API](/sections/Interfaces/management-api.md)
+	- [SMPP](/sections/interfaces/smpp.md)
+	- [Management API](/sections/interfaces/management-api.md)
 	- [Value-added services for MO messages](/sections/interfaces/vas.md)
 - Library documentation - [Each library](#list-of-official-libraries) provides basic "getting started" in each repo (readme.md).
 - How to [get in touch with us](/sections/contact.md)?

@@ -124,7 +124,7 @@ Add the parameter newSession=true. This flag will tell the Gateway to start a se
 
 #### Continue a session
 
-To continue an existing session, use the sessionid parameter in the request, by sending the session identifier returned in the response when you started a new session.
+To continue an existing session, use the sessionid parameter in the request, by sending the session identifier returned in the response when you started a new session. A session expires by default after 14 days if no messages have been sent using the sessionid. But this period is prolonged as long as you keep sending messages with the same sessionid. If you want the expiration period shorter or longer than 14 days for your service, please do contact us, and we will set this up for you.
 
 Note: If you want to continue the session do not set the new session flag. If you set both the new session flag and the sessionid, a new session will be generated.
 

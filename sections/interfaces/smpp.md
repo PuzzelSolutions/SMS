@@ -36,12 +36,12 @@ The SMPP Gateway supports version 3.4 of the SMPP interface. The SMPP protocol s
 
 ### Current limitations
 - "SUBMIT SHORT MESSAGE" operation
-- Only alphanumeric text messages are supported.
-- "esm_class" is ignored, all bits are set to 0.
-- "protocol_id" is ignored.
-- "priority_flag" is ignored.
-- "schedule\_delivery_time" is ignored, messages will be delivered immediately.
-- "registered_delivery" is ignored, the SMPP gateway will use the SMS Gateway service settings.
-- "replace\_if\_present_flag" is ignored.
-- "sm\_default\_msg_id" is ignored.
-- All optional parameters are ignored except "message_payload"
+  - Only alphanumeric text messages are supported.
+  - "esm_class" is ignored, all bits are set to 0.
+  - "protocol_id" is ignored.
+  - "priority_flag" is ignored.
+  - "schedule\_delivery_time" is ignored, messages will be delivered immediately.
+  - "registered_delivery" is ignored, the SMPP gateway will use the SMS Gateway service settings.
+  - "replace\_if\_present_flag" is ignored.
+  - "sm\_default\_msg_id" is ignored.
+  - All optional parameters are ignored except "message_payload"

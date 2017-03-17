@@ -74,7 +74,8 @@ You can specify the content of the SMS message by using the “content” parame
 SMS default encoding uses 7 bits to handle a character. The GSM 03.38 specification defines the valid character sets, this being the “Basic Character Set” and the corresponding extension table as depicted below:
 
 <p align="center">
-![Valid 7-bit GSM characters](http://i.imgur.com/Otl1whV.png)
+<img src="http://i.imgur.com/Otl1whV.png">
+</p>
 
 If you use characters from the extension table, for example the EUR character (€), an escape character is needed in addition to the character from the extension table. This means that the EUR character counts as two characters and you will have less space available in the message.
 
@@ -99,11 +100,14 @@ Example not using sessions: Your service desk needs to update email information 
 The following is an illustration of the interaction without and with the use of session.
 
 <p align="center">
-![](http://i.imgur.com/w8M0rRh.png)
+<img src="http://i.imgur.com/w8M0rRh.png">
+</p>
+
 
 Using session, you can also continue a conversation by providing the unique sessionid as a parameter when sending a message, for example like this:
 <p align="center">
-![](http://i.imgur.com/ScggctX.png)
+<img src="http://i.imgur.com/ScggctX.png">
+</p>
 
 Currently the use of sessions is only available for Norwegian subscribers, meaning that you can only send messages with session to end users with Norwegian subscriptions. 
 
@@ -116,7 +120,8 @@ When using a session, the originatortype must be set to the value 3 (Network spe
 The synchronous response from the gateway will contain a session identifier, which must be stored in your system if you want to be able to identify the response from the end user when replying to the message. 
 
 <p align="center">
-![](http://i.imgur.com/rTyKf14.jpg)
+<img src="http://i.imgur.com/rTyKf14.jpg">
+</p>
 
 #### Start a new session
 

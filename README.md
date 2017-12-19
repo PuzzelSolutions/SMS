@@ -70,14 +70,19 @@ For live accounts pricing is based on establishment, monthly subscription and tr
 
 ### About Puzzel 
 
-Puzzel is a leading provider of cloud-based and on-premise communication solutions. We have over 30 years of experience and with our experience and competence we aim to give our customers stable, flexible, user-friendly and scalable solutions. 
+Puzzel (formerly Intelecom’s contact centre entity) builds on 20 years’ heritage of crafting inventive and dependable solutions for customer interactions. It was one of the first pioneers to develop a cloud-based contact centre and has now extended this to encompass a complete new customer interaction platform with unique integration capabilities and payment solutions. Puzzel can be adapted to accommodate from one to several thousand users using any device, in any location and integrates with multiple applications seamlessly, allowing customers to meet the needs of today’s omni-channel and mobile environments.
 
-We provide innovative solutions through our cloud based omni channel contact-centre, SMS and mobile payments. Our customer base counts over 2000 customers across many verticals from offshore to transport, primarily in Scandinavia and UK. What most of our customers have in common is that they have a need to be able to communicate better with their users and employees. Our contribution is often that we offer means to integrate existing solutions with new ones or new interfaces. This results in continuous utilization of current investments and at the same time providing additional value for the customer. Our mission is to make sure that good communication is rewarding. 
+Puzzel is one of the few contact centre solutions that is completely multi-channel and brings together all the pieces to respond to phone, email, Web Chat, Social Media, SMS and payment enquiries all within one application. Click here to learn more about our multi-channel contact centre with our new extensible user interface and secure payment solutions.
 
-SMS solutions have been a part of Puzzel starting with the platform originally set up by Carrot Communications back in 2000. Since then not a lot have changed in the basic SMS GSM specifications, but a lot have changed concerning our customers' demands for stability, scalability, redundancy and speed. SMS now is a business critical application for many companies, both private and public. In addition, a lot has happened with SMS as a payment channel over the years. In later years many telcos have been opening up for selling physical goods and services, using SMS or carrier billing as payment. We at Puzzel have been working hard to keep up, both with customer demands and new possibilities over the years. As a result, we have a SMS platform, now in it's fifth major version, that is both technically advanced, high-capacity and stable. 
+Puzzel employs over 130 people who are all passionate about delivering innovative customer interaction solutions for contact centres and mobile environments.
 
-#### Puzzel AS
-The Company was started in Norway in 1998 as Consorte. In 2006 Consorte merged with Intelecom that had its roots in older companies such as Alcatel and Nexans. In 2010 Intelecom again merged with Carrot Communications and was acquired by Herkules Capital. In 2016 Intelecom was demerged. One part sold, one part continued as Puzzel. The main office is located in Oslo, with branch offices in many other Norwegian cities, as well as Sweden, Denmark, Bulgaria and the UK. 
+##### Puzzel’s Heritage
+
+Puzzel is an enigma – it is a new and vibrant company with over 20 years’ heritage of delivering communication solutions that take customer interaction to another level.
+
+Puzzel was created out of Intelecom Group to further focus on developing it’s contact centre and payment solutions where the company has taken a substantial position in the fast-growing market for cloud-based Customer Engagement Solutions. These solutions are used by a range of customers in different geographies, verticals and usage areas.
+
+Puzzel’s focus is to develop and deliver inventive technology that is empowering our customers by being feature rich and easy to use, being able to adapt to any environment through strong integration capabilities, and always being dependable by offering consistently high levels of stability and security.
 
 #### Herkules Capital
 Since 2010, Puzzel and its subsidiaries have been fully owned by [Herkules Capital](http://www.herkulescapital.no/), the leading Norwegian private equity firm which supports established companies located in the Nordic region with strong growth potential.

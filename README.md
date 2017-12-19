@@ -68,7 +68,7 @@ If you do not already have an account and want to try out or order access, pleas
 For live accounts pricing is based on establishment, monthly subscription and traffic (per message) fees. 
 
 
-### About Intelecom 
+### About Puzzel 
 
 Intelecom is a leading provider of cloud-based and on-premise communication solutions. We have over 30 years of experience and with our experience and competence we aim to give our customers stable, flexible, user-friendly and scalable solutions. 
 

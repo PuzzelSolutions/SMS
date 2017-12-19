@@ -19,7 +19,7 @@ There is a maximum limit of 918 characters of the sms, and sms’ that extend on
 
 It is also possible to configure the SMSGW to format and send an incoming SMS message as an email message.
 
-The email address to send incoming SMS messages to will need to be provided to Intelecom service desk. The end user's mobile number as well as Intelecom's serviceid is by default set as the originator of the message (this is highly configurable though), so it is fully supported to reply to an email to respond immediately.
+The email address to send incoming SMS messages to will need to be provided to Puzzel service desk. The end user's mobile number as well as Puzzel's serviceid is by default set as the originator of the message (this is highly configurable though), so it is fully supported to reply to an email to respond immediately.
 
 The SMS message content will come in the email body, but is also highly configurable.
 
@@ -28,8 +28,8 @@ By saying highly configurable, we mean that any field from [this section](/secti
 Example: 
 
 	Sender: 	[originator]-[serviceid]@sms.carrot.no
-	Subject: 	SMS message from Intelecom: [originator]
-	Message:	This is a message from Intelecom SMS platform. User sent: [content]
+	Subject: 	SMS message from Puzzel: [originator]
+	Message:	This is a message from Puzzel SMS platform. User sent: [content]
 
 ### Limitations
 

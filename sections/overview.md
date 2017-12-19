@@ -19,11 +19,11 @@
 - How to [get in touch with us](/sections/contact.md)?
 
 ##Introduction
-This documentation describes the functionality of, and explains how to integrate with, the Intelecom SMS Gateway (SMSGW). 
+This documentation describes the functionality of, and explains how to integrate with, the Puzzel SMS Gateway (SMSGW). 
 
 The SMSGW is an API that enables your solution(s) to send and receive SMS messages, both single messages and bigger batches of messages using the same API. 
 
-To be able to connect to the SMSGW you will need a service configured by Intelecom with sensible defaults and settings for your use case.  The service identifiers are serviceid, as well as a username and password. Please contact Intelecom Support (support.interactive@intele.com) if you want to create an agreement, get a demo account or if you have an active agreement but have not received these credentials.
+To be able to connect to the SMSGW you will need a service configured by Puzzel with sensible defaults and settings for your use case.  The service identifiers are serviceid, as well as a username and password. Please contact Puzzel Support ([help.puzzel.com](https://help.puzzel.com "Puzzel Help")) if you want to create an agreement, get a demo account or if you have an active agreement but have not received these credentials.
 
 The SMSGW has three main functionalities with corresponding APIs:
 
@@ -54,10 +54,10 @@ Additionally, the Gateway provides a Management API to manage messages. A descri
 <tr><td>DCS</td><td>Data Coding Scheme</td></tr>	
 <tr><td>MO</td><td>Mobile Originated (incoming messages sent from end users)</td></tr>	
 <tr><td>MT</td><td>Mobile Terminated (outgoing messages sent to end users).</td></tr>	
-<tr><td>CP</td><td>Content Providers (Customers of Intelecom and Intelecom itself)</td></tr>	
+<tr><td>CP</td><td>Content Providers (Customers of Puzzel and Puzzel itself)</td></tr>	
 <tr><td>DR</td><td>Delivery Reports (Confirmations from operators that messages have been / not have been received by end-user)</td></tr>	
 <tr><td>MSISDN</td><td> Mobile Station International ISDN Number</td></tr>	
-<tr><td>SMSGW</td><td>Intelecom SMS Gateway</td></tr>	
+<tr><td>SMSGW</td><td>Puzzel SMS Gateway</td></tr>	
 <tr><td>REST</td><td>Representational State Transfer (https://en.wikipedia.org/wiki/Representational_state_transfer)</td></tr>	
 <tr><td>MNO</td><td>Mobile Network Operator (e.g. Telenor, Telia)</td></tr>	
 <tr><td>CPA</td><td>Content Provider Access – An agreement with MNOs to be able to use four digit short numbers with billing possibilities.</td></tr>	

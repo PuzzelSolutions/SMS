@@ -2,7 +2,7 @@
 
 [Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/about.md) - [Next section](/sections/interfaces-general.md)
 
-This section describes all relevant parameters used in the Intelecom SMS Gateway which is common for all interfaces. 
+This section describes all relevant parameters used in the Puzzel SMS Gateway which is common for all interfaces. 
 
 ## Parameters for outgoing messages (MT)
 
@@ -12,9 +12,9 @@ The following lists of parameters are used when sending messages in either of ou
 
 <table>
 <tr><th>Parameter Name</th><th>Data Type</th><th>Description</th><th>Mandatory</th></tr>	
-<tr><td>serviceid</td><td>Integer</td><td>Identifies the service. Provided by Intelecom.</td><td>Yes</td></tr>	
-<tr><td>username</td><td>String</td><td>For authentication. Provided by Intelecom.</td><td>Yes</td></tr>		
-<tr><td>password</td><td>String</td><td>For authentication. Provided by Intelecom.</td><td>Yes</td></tr>
+<tr><td>serviceid</td><td>Integer</td><td>Identifies the service. Provided by Puzzel.</td><td>Yes</td></tr>	
+<tr><td>username</td><td>String</td><td>For authentication. Provided by Puzzel.</td><td>Yes</td></tr>		
+<tr><td>password</td><td>String</td><td>For authentication. Provided by Puzzel.</td><td>Yes</td></tr>
 <tr><td>batchReference</td><td>String</td><td>Reference ID that will be returned in the response.</td><td>No</td></tr>	
 <tr><td>message</td><td>List of composite objects</td><td>At least one message.</td><td>Yes</td></tr>	
 </table>
@@ -51,7 +51,7 @@ Example: 173
 <tr><td>differentiator</td><td>String</td><td>Arbitrary string defined by the client to enable grouping messages in certain statistic reports.<br/><br/>
 Example: OTP message
 </td><td>No</td></tr>
-<tr><td>invoiceNode</td><td>String</td><td>Arbitrary string defined by the client to enable grouping messages on the service invoice from Intelecom to the client.<br/><br/>
+<tr><td>invoiceNode</td><td>String</td><td>Arbitrary string defined by the client to enable grouping messages on the service invoice from Puzzel to the client.<br/><br/>
 Example: marketing_dept
 </td><td>No</td></tr>	
 <tr><td>age</td><td>Integer</td><td>Only relevant for premium rate messages.<br/>
@@ -102,7 +102,7 @@ Valid values are:
 <li>ALPHANUMERIC</li>
 <li>NETWORK</li></td><td>Yes</td></tr>	
 <tr><td>originator</td><td>String</td><td>Value depends on the originatorType. <br/><br/>
-Example: +4799999999, Intelecom, 1960
+Example: +4799999999, Puzzel, 1960
 </td><td>Yes</td></tr>		
 </table> 
 
@@ -239,7 +239,7 @@ Reference ID for the request. Either the value provided by the client in the req
 
 If you want to enable end users to send SMS messages to your solution, you will need to set up a service able of receiving HTTP GET requests or HTTP POST requests through a REST API with either JSON or XML formatting. Whilst the HTTP GET API will only send one request for each message, the REST API will accumulate batches of messages and only send 1 request per second.
 
-The SMSGW will invoke your HTTP service when MO- and DR-messages are slated for delivery to your server. The URL of your service must be provided to Intelecom Interactive Service Desk ([support.interactive@intele.com](mailto:support.interactive@intele.com)) for proper configuration of the service. You also need to provide information about which API you prefer for incoming (MO) messages. (HTTP GET, HTTP POST with JSON or HTTP POST with XML).
+The SMSGW will invoke your HTTP service when MO- and DR-messages are slated for delivery to your server. The URL of your service must be provided to Puzzel Service Desk on [help.puzzel.com](https://help.puzzel.com "help.puzzel.com") for proper configuration of the service. You also need to provide information about which API you prefer for incoming (MO) messages. (HTTP GET, HTTP POST with JSON or HTTP POST with XML).
 
 ### Parameters for incoming messages (MO)
 
@@ -254,10 +254,11 @@ The SMSGW will invoke your HTTP service when MO- and DR-messages are slated for 
 </td></tr>
 <tr><td>strippedcontent</td><td>String</td><td>Same as content, but <b>keyword</b> is stripped from beginning of content.
 </td></tr>	
-<tr><td>timestamp</td><td>Date - Format: yyyyMMdd HH:mm:ss</td><td>The time when the message entered the Intelecom's SMS platform. 
+<tr><td>timestamp</td><td>Date - Format: yyyyMMdd HH:mm:ss</td><td>The time when the message entered the Puzzel SMS platform. 
 <tr><td>sctimestamp</td><td>Date - Format: yyyyMMdd HH:mm:ss</td><td>Service Center time stamp represents the time the operator SMSC received the message.</td></tr>	
-<tr><td>serviceid</td><td>Integer</td><td>The id of the Intelecom service that has been identified for this message.</td></tr>	
-<tr><td>servicename</td><td>String</td><td>The name of the service as provisioned in Intelecom's systems</td></tr>
+<tr><td>serviceid</td><td>Integer</td><td>The id of the Puzzel service that has been identified for this message.</td></tr>
+	
+<tr><td>servicename</td><td>String</td><td>The name of the service as provisioned in Puzzel's systems</td></tr>
 <tr><td>originator</td><td>String</td><td>The originator / sender of the SMS message. MSISDN with country code (international formatting) - e.g. +4799999999 </td></tr>
 <tr><td>mcc / mnc</td><td>Integer</td><td>Mobile Country Code / Mobile Network Code for this message. See <a href='https://en.wikipedia.org/wiki/Mobile_country_code'>here</a> for a full list. Here are the common norwegian values:
 <table>
@@ -272,7 +273,7 @@ The SMSGW will invoke your HTTP service when MO- and DR-messages are slated for 
 <tr><td>type</td><td>Integer</td><td>Always=1 (parameter used to distinguish between MO and DR). Note that this parameter is only available on the HTTP GET interface.</td></tr>
 </table>  
 
-### Response when receiving MO SMS messages from Intelecom
+### Response when receiving MO SMS messages from Puzzel
 
 Your server must respond to the HTTP request with a HTTP 200 header response, any other response code will by default cause a retry of delivery.
 
@@ -294,8 +295,8 @@ This is an asynchronous operation and you will need to implement a mechanism for
 <tr><td>customerbatchreference</td><td>String</td><td>The batchReference of the MT message. A system batch reference is generated if you do not specify one when sending the MT message.</td></tr>
 <tr><td>customermessagereference</td><td>String</td><td>The clientReference you specified in the MT message. 
 </td></tr>	
-<tr><td>serviceid</td><td>Integer</td><td>The id of the Intelecom service that has been identified for this message.</td></tr>	
-<tr><td>servicename</td><td>String</td><td>The name of the service as provisioned in Intelecom's systems</td></tr>
+<tr><td>serviceid</td><td>Integer</td><td>The id of the Puzzel service that has been identified for this message.</td></tr>	
+<tr><td>servicename</td><td>String</td><td>The name of the service as provisioned in Puzzel's systems</td></tr>
 <tr><td>originator</td><td>String</td><td>The originator / sender of the SMS message. MSISDN with country code (international formatting) - e.g. +4799999999 </td></tr>
 <tr><td>mcc / mnc</td><td>Integer</td><td>Mobile Country Code / Mobile Network Code for this message. See <a href='https://en.wikipedia.org/wiki/Mobile_country_code'>here</a> for a full list. Here are the common norwegian values:
 <table>
@@ -346,7 +347,7 @@ This is an asynchronous operation and you will need to implement a mechanism for
 <tr><td>type</td><td>Integer</td><td>Always=6 (parameter used to distinguish between MO and DR). Note that this parameter is only available on the HTTP GET interface.</td></tr>	
 </table> 
 
-### Reponse when receiving delivery reports (DR) from Intelecom
+### Reponse when receiving delivery reports (DR) from Puzzel
 
 You must respond to the HTTP request with a HTTP 200 header response, otherwise any other header responses will cause a retry of delivery.
  

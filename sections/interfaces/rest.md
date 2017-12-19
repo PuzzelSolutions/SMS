@@ -2,7 +2,7 @@
 
 [Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces-general.md) -  [Next section](/sections/interfaces/soap.md)
 
-This section describes how to integrate towards the Intelecom SMS Gateway REST API. The Rest API supports both sending SMS (MT), receiving SMS (MO) and delivery reports (DR). Please see [here](/sections/common.md) for information about the available message parameters.
+This section describes how to integrate towards the Puzzel SMS Gateway REST API. The Rest API supports both sending SMS (MT), receiving SMS (MO) and delivery reports (DR). Please see [here](/sections/common.md) for information about the available message parameters.
 
 ## Sending messages (MT)
 
@@ -38,15 +38,15 @@ The XML request and response uses the same schema used in the WSDL definition fo
 	<?xml version="1.0"?>
 	<req:request xmlns:req=http://chimera.intele.com/gw/xsd/SMSGateway/Request/2013/02 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 		<serviceId>1000</serviceId>
-		<username>intelecom</username>
+		<username>Puzzel</username>
 		<password>xdyf3bf2</password>
 		<message>
 			<recipient>+4741000000</recipient>
-			<content>This is a message from Intelecom.</content>
+			<content>This is a message from Puzzel.</content>
 			<price>0</price>
 			<settings>
 				<originatorSettings>
-					<originator>Intelecom</originator>
+					<originator>Puzzel</originator>
 					<originatorType>Alphanumeric</originatorType>
 				</originatorSettings>
 				<safeRemoveNonGsmCharacters>true</safeRemoveNonGsmCharacters>
@@ -71,16 +71,16 @@ The XML request and response uses the same schema used in the WSDL definition fo
 
 	{
 	    "serviceId":1000,
-	    "username":"intelecom",
+	    "username":"Puzzel",
 	    "password":"xdyf3bf2",
 	    "message":[
 	        {
 	            "recipient":"+4741000000",
-	            "content":"This is a message from Intelecom.",
+	            "content":"This is a message from Puzzel.",
 	            "price":0,
 	            "settings":{
 	                "originatorSettings":{
-	                    "originator":"Intelecom",
+	                    "originator":"Puzzel",
 	                    "originatorType":"ALPHANUMERIC"
 	                },
 	            }
@@ -111,7 +111,7 @@ The XML request and response uses the same schema used in the WSDL definition fo
 	Cache-Control: no-cache
 	Content-Type: application/x-www-form-urlencoded
 	
-	serviceId=1000&username=intelecom&password=xdyf3bf2&message%5B0%5D.recipient=%2B4710000000&message%5B0%5D.content=Test+is+a+message+from+Intelecom
+	serviceId=1000&username=Puzzel&password=xdyf3bf2&message%5B0%5D.recipient=%2B4710000000&message%5B0%5D.content=Test+is+a+message+from+Puzzel
 
 
 
@@ -119,7 +119,7 @@ The XML request and response uses the same schema used in the WSDL definition fo
 
 If you want to enable end users to send SMS messages to your solution via REST you will need to set up a service able of receiving HTTP POST requests through a REST API with either JSON or XML formatting. The REST API will accumulate batches of messages and only send 1 request per second. This means that you can expect that you sometimes will get XML or JSON messages that contain more than one message / delivery report.
 
-The SMSGW will invoke your HTTP service when MO messages are slated for delivery to your server. The URL of your service must be provided to Intelecom Interactive Service Desk ([support.interactive@intele.com](mailto:support.interactive@intele.com)) for proper configuration of the service. You also need to provide information of which content-type you want to use (HTTP POST with JSON or HTTP POST with XML).
+The SMSGW will invoke your HTTP service when MO messages are slated for delivery to your server. The URL of your service must be provided to Puzzel Help ([help.puzzel.com](http://help.puzzel.com "Puzzel Help")) for proper configuration of the service. You also need to provide information of which content-type you want to use (HTTP POST with JSON or HTTP POST with XML).
 
 If you need to add a firewall rule, all requests will originate from IP: 212.89.48.14.
 

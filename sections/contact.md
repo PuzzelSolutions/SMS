@@ -1,6 +1,6 @@
 # Contact us
 
 If you have any questions regarding the SMS APIs, or if you want a demo account, please feel free to contact us using the form here:
- [https://www.intelecom.no/vare-losninger/mobile-tjenester/sms/sms-api/kontakt/](https://www.intelecom.no/vare-losninger/mobile-tjenester/sms/sms-api/kontakt/) 
+[help.puzzel.com](https://help.puzzel.com "help.puzzel.com")
 
-You can also contact us by phone 03050 in Norway.
+You can also contact us by phone +47 21 89 89 89 in Norway.

@@ -2,7 +2,7 @@
 
 [Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces/rest.md) -  [Next section](/sections/interfaces/http-get.md)
 
-This section describes how to integrate towards the Intelecom SMS Gateway SOAP (web services) API. The SOAP API only support sending SMS (MT), meaning that receiving SMS (MO) and delivery reports (DR) will have to be implemented using protocols that support these message types such as HTTP GET or HTTP POST with JSON or XML. An overview over each protocols capabilities are shown [here](/sections/interfaces-general.md) 
+This section describes how to integrate towards the Puzzel SMS Gateway SOAP (web services) API. The SOAP API only support sending SMS (MT), meaning that receiving SMS (MO) and delivery reports (DR) will have to be implemented using protocols that support these message types such as HTTP GET or HTTP POST with JSON or XML. An overview over each protocols capabilities are shown [here](/sections/interfaces-general.md) 
 
 Please see [here](/sections/Common.md) for information about the available message parameters.
 
@@ -20,15 +20,15 @@ The web service interface is defined by the WSDL and can be retrieved from:
 			<sms:sendMessages>
 				<ns:request>
 					<serviceId>1000</serviceId>
-					<username>intelecom</username>
+					<username>Puzzel</username>
 					<password>xdyf3bf2</password>
 					<message>
 						<recipient>+4741000000</recipient>
-						<content>This is a message from Intelecom.</content>
+						<content>This is a message from Puzzel.</content>
 						<price>0</price>
 						<settings>
 						<originatorSettings>
-								<originator>Intelecom</originator>
+								<originator>Puzzel</originator>
 								<originatorType>Alphanumeric</originatorType>
 							</originatorSettings>
 						</settings>

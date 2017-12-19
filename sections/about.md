@@ -6,7 +6,7 @@ SMS is best known for P2P messaging where SMS messages are exchanged between two
 
 A2P SMS is when SMS messages are sent from an application, such as a CRM system, VPN pincode solution (OTP) or custom webpages _to_ a mobile phone. This is also often named MT (_Mobile_ _Terminated_) SMS messages. Messages may also be sent _from_ the mobile phone to an application, something that is called P2A messages, and also often named MO (_Mobile_ _originated_) messages.
 
-Intelecom is an enabler of both A2P / P2A messaging - meaning that you can use our SMS Gateway API to "SMS enable" your applications and systems. 
+Puzzel is an enabler of both A2P / P2A messaging - meaning that you can use our SMS Gateway API to "SMS enable" your applications and systems. 
 
 The chapters below will introduce you to common terms and possibilites for an A2P / P2A solution. 
 
@@ -24,7 +24,7 @@ The available APIs for sending SMS messages are:
 - SMTP (email – with limited functionality)
 - SMPP
 
-By using the SOAP and REST interfaces, it is possible to send several messages in one batch. This can be messages to different recipients and with different price and content. All interfaces except SMTP will synchronously return a status code and message identifier, which is a unique identifier for each message in the Intelecom platform. The status code will give information about whether the messages were added to the internal queue in the Intelecom system or not. The status code will not give information about whether the message was received on the end user's handset or not. In order to check for this, you need to utilize the delivery report mechanism as described in a later section. 
+By using the SOAP and REST interfaces, it is possible to send several messages in one batch. This can be messages to different recipients and with different price and content. All interfaces except SMTP will synchronously return a status code and message identifier, which is a unique identifier for each message in the Puzzel platform. The status code will give information about whether the messages were added to the internal queue in the Puzzel system or not. The status code will not give information about whether the message was received on the end user's handset or not. In order to check for this, you need to utilize the delivery report mechanism as described in a later section. 
 
 ### Pricing - Non-premium and premium messages (CPA / GAS)
 
@@ -43,10 +43,10 @@ In some countries, there are also different business models depending on what pr
 When sending SMS messages, it is possible to specify the originator of the messages that is shown on the end users' handsets when receiving the message. Three different types of originator settings exist:
 
 - International Number – if the originator is to be an international phone number, in E164 format e.g. +4799999999
-- Alphanumeric Text – if the originator is to be alphanumeric text, for example “Intelecom”. The max length of an alphanumeric originator is 11 characters and only a-z, 0-9 and the chars ‘ ‘ (space), '%', '&', '-', '+', '.' , ',' may be used as content.
+- Alphanumeric Text – if the originator is to be alphanumeric text, for example “Puzzel”. The max length of an alphanumeric originator is 11 characters and only a-z, 0-9 and the chars ‘ ‘ (space), '%', '&', '-', '+', '.' , ',' may be used as content.
 - Network specific – if the originator is to be short number, e.g. 1960.
 
-You must set the correct originator and originatortype parameter values if you want to override the default originator for your service. For example, if you want the originator to be ‘Intelecom’, you need to set the originator parameter to “Intelecom” and the originatortype parameter to “ALPHANUMERIC”.
+You must set the correct originator and originatortype parameter values if you want to override the default originator for your service. For example, if you want the originator to be ‘Puzzel’, you need to set the originator parameter to “Puzzel” and the originatortype parameter to “ALPHANUMERIC”.
 
 Note that is not possible for an end user to reply to a message sent with alphanumeric originator. Some phones may be able to reply to alphanumeric originators if you set alphanumeric originator with only numbers in the content parameter. As not all phones will accept this, we recommend that you use the types for international or national numbers if you are to send a numeric string as originator.
 
@@ -56,7 +56,7 @@ Our experience is that some operators outside of Scandinavia have problems deliv
 
 ### Validity Period
 
-It is possible to define the validity period of each message when sending SMS messages. The validity period is the period of time that delivery attempts occur for a SMS message. Meaning that if you specify a validity time of 5 minutes, the Intelecom platform and the Mobile Network Operators will try to deliver the message for 5 minutes using the respective retry schemes. If the message cannot be delivered to the handset in this timeframe (handset turned off etc.), the message is discarded, resulting in a delivery report with a timeout status. This feature is handy if you have messages that only are valid for a certain period of time, such as one-time passwords or special offers with a time limitation. When specifying the validity parameter, please refer to the table below:
+It is possible to define the validity period of each message when sending SMS messages. The validity period is the period of time that delivery attempts occur for a SMS message. Meaning that if you specify a validity time of 5 minutes, the Puzzel platform and the Mobile Network Operators will try to deliver the message for 5 minutes using the respective retry schemes. If the message cannot be delivered to the handset in this timeframe (handset turned off etc.), the message is discarded, resulting in a delivery report with a timeout status. This feature is handy if you have messages that only are valid for a certain period of time, such as one-time passwords or special offers with a time limitation. When specifying the validity parameter, please refer to the table below:
 
 
 <table>
@@ -68,7 +68,7 @@ It is possible to define the validity period of each message when sending SMS me
 
 ### Message Content
 
-You can specify the content of the SMS message by using the “content” parameter. For text messages, the max length of a single message is 160 characters. If you provide text that is longer than 160 characters, the SMSGW will automatically split the message into concatenated text messages. When SMS messages are concatenated, some of the SMS payload is needed for the UDH, resulting in the max message length for each concatenated message being 153 characters. The Intelecom platform allows a maximum of six concatenated messages, meaning that the maximum character length of the content field is 918 characters (153 x 6). The GSM specification allows for a much higher number of concatenated messages, but because of restrictions in some of the MNO SMSC's, the max limit of six concatenated messages had to be included.
+You can specify the content of the SMS message by using the “content” parameter. For text messages, the max length of a single message is 160 characters. If you provide text that is longer than 160 characters, the SMSGW will automatically split the message into concatenated text messages. When SMS messages are concatenated, some of the SMS payload is needed for the UDH, resulting in the max message length for each concatenated message being 153 characters. The Puzzel platform allows a maximum of six concatenated messages, meaning that the maximum character length of the content field is 918 characters (153 x 6). The GSM specification allows for a much higher number of concatenated messages, but because of restrictions in some of the MNO SMSC's, the max limit of six concatenated messages had to be included.
 
 #### Valid characters
 SMS default encoding uses 7 bits to handle a character. The GSM 03.38 specification defines the valid character sets, this being the “Basic Character Set” and the corresponding extension table as depicted below:
@@ -88,11 +88,11 @@ This behaviour can be customized for each service. Currently we offer these pars
 <tr><td>Remove characters</td><td>Any invalid characters will be removed and the message will be sent. E.g. "Testing: Клавдии áàóòúù" will result in "Testing àòù"</td></tr>	
 <tr><td>Replace characters</td><td>Any invalid characters will be replaced or removed and the message will be sent. Characters that will be replaced are "accented" characters, e.g. "Testing Клавдии áàóòúù " will result in "Testing aàoòuù".</td></tr>
 </table>
-You can contact Intelecom to select a specific parsing type for your service. Parsing type can also be set for each message with the <a href="https://github.com/Intelecom/sms/blob/master/sections/common.md#parameters">parsing-type parameter.</a>
+You can contact Puzzel to select a specific parsing type for your service. Parsing type can also be set for each message with the <a href="https://github.com/Intelecom/sms/blob/master/sections/common.md#parameters">parsing-type parameter.</a>
 
 ### Sessions
 
-The Intelecom SMS platform has introduced a session mechanism that allows for two-way dialog between a system and end-user without the need for keywords. Keywords in SMS are short text identifiers for services on a shared short number. 
+The Puzzel SMS platform has introduced a session mechanism that allows for two-way dialog between a system and end-user without the need for keywords. Keywords in SMS are short text identifiers for services on a shared short number. 
 
 Example using sessions: To order weather information on the short code 1881 you can send “WEATHER OSLO”. In this example “WEATHER” is the keyword identifying the service, whilst “OSLO” is a parameter. Using keywords to have a SMS dialog with an end user is not a very user-friendly solution as the end user will will have to provide the keyword before entering the text for each message. 
 
@@ -158,7 +158,7 @@ Specifying a time window as in the previous example would only be useful for ver
 To avoid situations where a recipient receives a large number of messages by mistake, the SMS Gateway implements a filter that keeps track of the number of messages per service sent and received for all MSISDN. 
 If a message sent to the SMS Gateway violates the rules implemented in the spam filter it will result in an [error accompanied by a status code](/sections/common.md#message-status), and no message will be sent.
 
-Some services needs to be able to send many messages to the same MSISDN within a short timeframe, and to accommodate for such cases it is possible to disable the spam filter. To disable the spam filter for a service you need to contact Intelecom.
+Some services needs to be able to send many messages to the same MSISDN within a short timeframe, and to accommodate for such cases it is possible to disable the spam filter. To disable the spam filter for a service you need to contact Puzzel.
 
 ### Message identifiers
 All messages sent through the SMS Gateway is assigned a unique identifier named [messageId](/sections/common.md#response-parameters). Each request made to the SMS Gateway will also be assigned a unique identifier named [batchReference](/sections/common.md#response-parameters).
@@ -168,7 +168,7 @@ It is also possible to create identifiers on the customer side. Each message can
 #### Validations of customer generated identifiers
 The message identifiers set by the customer in the request are not validated by default so there is no requirement for them to be unique. It is possible to have the gateway validate that the identifiers are unique for each service. The SMS Gateway will check that an identifier is unique and give an [error message](/sections/common.md#message-status) if it is not.
 To avoid keeping track of too many customer generated message identifiers the SMS Gateway will only keep track of message identifiers generated within the last hour.
-This functionality must be turned on for the service. Please contact Intelecom support in order to activate this.
+This functionality must be turned on for the service. Please contact Puzzel support in order to activate this.
 
 ### Retry logic and fault situations
 When a client connects to the SMS Gateway certain faults can lead to situations where the client does not know if the request was processed or not. This means that the client cannot know if the messages have been sent, and that retrying the operation could lead to duplicate messages being sent. Such situation will typically be network related, e.g. timeouts or a broken connection.

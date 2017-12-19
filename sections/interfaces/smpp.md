@@ -2,7 +2,7 @@
 
 [Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces/tcp-xml.md) -  [Next section](/sections/interfaces/management-api.md)
 
-It is possible to integrate towards the Intelecom SMS gateway using the SMPP protocol.
+It is possible to integrate towards the Puzzel SMS gateway using the SMPP protocol.
 
 The SMPP Gateway supports version 3.4 of the SMPP interface. The SMPP protocol specification can found onine, for example [here](https://www.openmarket.com/customer-center/documentation/SMSSMPP-Specification/SMPP-v3-4-Issue1-2.pdf)
 

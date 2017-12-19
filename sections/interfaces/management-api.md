@@ -48,7 +48,7 @@ Use the HTTP Accept header to specify what Content-Type your client prefers for 
 
 ## Message batch management
 
-These APIs allow managing batches of messages sent that have been throttled (queued for sending in the Intelecom platform). 
+These APIs allow managing batches of messages sent that have been throttled (queued for sending in the Puzzel platform). 
 
 	Base URI path: /batch/
 
@@ -121,7 +121,7 @@ Note that username and password must be provided per the HTTP Basic authenticati
 	      <gwmgmt:stopBatchRequest>
 	         <!--You may enter the following 4 items in any order-->
 	         <serviceId>1000</serviceId>
-	         <username>intelecom</username>
+	         <username>Puzzel</username>
 	         <password>xdyf3bf2</password>
 	         <clientBatchReference>my-batch-reference</clientBatchReference>
 	      </gwmgmt:stopBatchRequest>
@@ -220,7 +220,7 @@ Note that username and password must be provided per the HTTP Basic authenticati
 	      <gwmgmt:getBatchListRequest>
 	         <!--You may enter the following 3 items in any order-->
 	         <serviceId>1000</serviceId>
-	         <username>intelecom</username>
+	         <username>Puzzel</username>
 	         <password> xdyf3bf2</password>
 	      </gwmgmt:getBatchListRequest>
 	   </soapenv:Body>
@@ -330,7 +330,7 @@ Note that username and password must be provided per the HTTP Basic authenticati
 	      <gwmgmt:getBatchStatusRequest>
 	         <!--You may enter the following 3 items in any order-->
 	         <serviceId>1000</serviceId>
-	         <username>intelecom</username>
+	         <username>Puzzel</username>
 	         <password> xdyf3bf2</password>
 	         <clientBatchReference>my-batch</clientBatchReference>
 	      </gwmgmt:getBatchStatusRequest>

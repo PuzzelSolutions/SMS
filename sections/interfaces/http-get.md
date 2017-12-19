@@ -2,7 +2,7 @@
 
 [Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces/soap.md) -  [Next section](/sections/interfaces/smtp.md)
 
-This section describes how to integrate towards the Intelecom SMS Gateway HTTP(S) GET API. 
+This section describes how to integrate towards the Puzzel SMS Gateway HTTP(S) GET API. 
 
 The content provider may invoke the SMS Gateway (SMSGW) using HTTP GET queries. Though not as flexible as its SOAP / REST counterparts, it is a very easy protocol to integrate with, and to send simple test messages from your browser for example. If you need to integrate a third party product to SMS, this protocol is often the only option. However, as mentioned earlier, we recommend that you integrate using the [REST API](/sections/interfaces/rest.md) if you have the possibility to do so. 
 
@@ -46,7 +46,7 @@ Similar to the other interfaces the HTTP(S) GET interface supports sending multi
 
 #### Message with originator settings:
 
-	https://smsgw.intele.com/gw/rs/sendMessages?serviceId=999899&username=test&password=test&message[0].recipient=+4799999999&message[0].content=Test&message[0].settings.originatorSettings.originatorType=ALPHANUMERIC&message[0].settings.originatorSettings.originator=Intelecom
+	https://smsgw.intele.com/gw/rs/sendMessages?serviceId=999899&username=test&password=test&message[0].recipient=+4799999999&message[0].content=Test&message[0].settings.originatorSettings.originatorType=ALPHANUMERIC&message[0].settings.originatorSettings.originator=Puzzel
  
 #### Message with PID parameter setting:
 
@@ -60,7 +60,7 @@ The response format is of content-type "text/xml" and is the same as for the RES
 
 If you want to enable end users to send SMS messages to your solution using HTTP(S) GET, you will need to set up a service able of receiving HTTP(S) GET requests. This API will send only one request for each message.
 
-The SMSGW will invoke your HTTP service when MO messages are slated for delivery to your server. The URL of your service must be provided to Intelecom Interactive Service Desk ([support.interactive@intele.com](mailto:support.interactive@intele.com)) for proper configuration of the service. You also need to provide information that you want to use the HTTP(S) GET API method.
+The SMSGW will invoke your HTTP service when MO messages are slated for delivery to your server. The URL of your service must be provided to Puzzel Service Desk ([help.puzzel.com](https://help.puzzel.com "Puzzel Help")) for proper configuration of the service. You also need to provide information that you want to use the HTTP(S) GET API method.
 
 If you need to add a firewall rule, all requests will originate from IP: 212.89.48.14.
 

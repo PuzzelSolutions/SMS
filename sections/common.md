@@ -78,9 +78,6 @@ Example: true
 <tr><td>originatorSettings</td><td>Composite object</td><td>Used to specify the originator. See description below.<br/><br/>
 Uses values from service configuration unless specified.
 </td><td>No</td></tr>
-<tr><td>originatorSettings</td><td>Composite object</td><td>Used to specify the originator. See description below.<br/><br/>
-Uses values from service configuration unless specified.
-</td><td>No</td></tr>
 <tr><td>gasSettings</td><td>Composite object</td><td>Used if the message is a premium SMS transaction. See description below<br/><br/>
 Uses values from service configuration unless specified.
 </td><td>No</td></tr>

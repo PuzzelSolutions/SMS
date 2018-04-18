@@ -68,9 +68,17 @@ It is possible to define the validity period of each message when sending SMS me
 
 ### Message Content
 
-You can specify the content of the SMS message by using the “content” parameter. For text messages, the max length of a single message is 160 characters. If you provide text that is longer than 160 characters, the SMSGW will automatically split the message into concatenated text messages. When SMS messages are concatenated, some of the SMS payload is needed for the UDH, resulting in the max message length for each concatenated message being 153 characters. The Puzzel platform allows a maximum of six concatenated messages, meaning that the maximum character length of the content field is 918 characters (153 x 6). The GSM specification allows for a much higher number of concatenated messages, but because of restrictions in some of the MNO SMSC's, the max limit of six concatenated messages had to be included.
+You can specify the content of the SMS message by using the “content” parameter. The Data Coding Scheme (DCS) specifies how the content is encoded. Three encodings are supported:
+<ul>
+  <li>GSM 7-bit</li>
+  <li>Data (8-bit) (rarely used)</li>
+  <li>UCS-2 (UTF-16)</li>
+</li>
 
-#### Valid characters
+#### GSM 7-bit
+The max length of a single message is 160 characters. If you provide text that is longer than 160 characters, the SMSGW will automatically split the message into concatenated text messages. When SMS messages are concatenated, some of the SMS payload is needed for the UDH, resulting in the max message length for each concatenated message being 153 characters. The Puzzel platform allows a maximum of six concatenated messages, meaning that the maximum character length of the content field is 918 characters (153 x 6). The GSM specification allows for a much higher number of concatenated messages, but because of restrictions in some of the MNO SMSC's, the max limit of six concatenated messages had to be included.
+
+##### Valid characters
 SMS default encoding uses 7 bits to handle a character. The GSM 03.38 specification defines the valid character sets, this being the “Basic Character Set” and the corresponding extension table as depicted below:
 
 <p align="center">
@@ -78,6 +86,14 @@ SMS default encoding uses 7 bits to handle a character. The GSM 03.38 specificat
 </p>
 
 If you use characters from the extension table, for example the EUR character (€), an escape character is needed in addition to the character from the extension table. This means that the EUR character counts as two characters and you will have less space available in the message.
+
+#### Data (8-bit)
+Data encoding is used for binary messages and is used in some Machine-2-Machine (M2M) communication use cases. You must set an appropriate Data Coding Scheme (DCS) parameter to use this encoding.
+
+#### UCS-2 (UTF-16)
+The GSM 7-bit character set is fairly limited. UCS-2 makes it possible to send emojis and other symbols. However, a single message encoded with UCS-2 can maximum fit 70 characters (notice that some UCS-2 symbols, especially emojis, use multiple code points. A 🍉 (watermelon) consumes 2 characters (2*16 bit = 32 bit). In addition such a character cannot be split between multiple messages which further reduces the maximum amount of characters per message.
+
+UCS-2 is used preferably by setting the parsing type to 'AUTO_DETECT'. Optionally it can also be enabled by setting the DCS parameter.
 
 #### Invalid characters
 If the content payload contains characters that are not valid the default behaviour of the gateway is to return an error code and not send the message. This means that the customer should verify the message content before it is sent.

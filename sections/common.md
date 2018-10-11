@@ -70,7 +70,7 @@ Example: true
 <tr><td>sessionId</td><td>String</td><td>Used to continue an existing session. Read <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#sessions">here</a> for more information.<br/><br/>
 Example: 01bxmt7f8b8h3zkwe2vg
 </td><td>No</td></tr>
-<tr><td>autoDetectEncoding</td><td>Boolean</td><td>Currently not in use. Default value is false.<br/><br/>
+<tr><td>autoDetectEncoding</td><td>Boolean</td><td>Default value is false and means that the message content must consist of characters in the GSM 7-bit alphabet and messages containing any other characters will get an error message. However if you set this field to true, you are able to use all characters defined in the UCS-2 character set. (Please note that if you use any non GSM-7 characters in your message, the message will be UCS-2 encoded and you might end up sending more messages than intended - so use with care.)<br/><br/>
 Example: true
 </td><td>No</td></tr>
 <tr><td><strike>safeRemoveNonGsmCharacters</strike></td><td><em>Deprecated</em></td><td>Check the documentation on <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#message-content">message content</a> for more information.

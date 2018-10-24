@@ -182,9 +182,15 @@ This functionality may be useful in case of emergencies or if you want to send c
 
 Also note that this functionality is only guaranteed to work for messages that are free of charge to receive for the end user. Many MNOs does not allow this setting for premium SMS. 
 </td></tr>		
-<tr><td>parsing-type</td><td>String</td><td>Valid values: NONE, SAFE_REMOVE_NON_GSM, SAFE_REMOVE_NON_GSM_WITH_REPLACE
+<tr><td>parsing-type</td><td>String</td><td>Valid values: 
+	<ul>
+		<li>NONE</li>
+		<li>SAFE_REMOVE_NON_GSM</li>
+		<li>SAFE_REMOVE_NON_GSM_WITH_REPLACE</li>
+		<li>AUTO_DETECT</li>
+	</ul>
 
-The parsing type can be set on the service level and it is recommended only specify this parameter if you need to override it.
+The parsing type can be set on the service level and it is recommended to only specify this parameter if you need to override it.
 
 See the chapter on <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#message-content">message content</a> for further details about the different parsing types.
 </td></tr>

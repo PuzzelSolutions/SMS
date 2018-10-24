@@ -40,7 +40,7 @@ Similar to the other interfaces the HTTP(S) GET interface supports sending multi
 
 #### Simple message:
 
-	https://smsgw.intele.com/gw/rs/sendMessages?serviceId=99999& message[0].recipient=%2B4799999999&message[0].content=Dette+er+en+ny+test.&username=test&password=test
+	https://smsgw.intele.com/gw/rs/sendMessages?serviceId=99999&message[0].recipient=%2B4799999999&message[0].content=Dette+er+en+ny+test.&username=test&password=test
 
 *Note that +47 becomes %2B47 when URL encoded*
 

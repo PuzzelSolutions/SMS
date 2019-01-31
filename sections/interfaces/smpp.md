@@ -28,6 +28,7 @@ The SMPP Gateway supports version 3.4 of the SMPP interface. The SMPP protocol s
 	- GSM (SMSC Default Alphabet)
 	- IA5/ASCII
 	- Latin 1 (ISO-8859-1)
+	- UCS-2
 - No bit packing.
 
 ### Validity period

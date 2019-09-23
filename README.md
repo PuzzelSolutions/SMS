@@ -84,8 +84,6 @@ Puzzel was created out of Intelecom Group to further focus on developing it’s 
 
 Puzzel’s focus is to develop and deliver inventive technology that is empowering our customers by being feature rich and easy to use, being able to adapt to any environment through strong integration capabilities, and always being dependable by offering consistently high levels of stability and security.
 
-#### Herkules Capital
-Since 2010, Puzzel and its subsidiaries have been fully owned by [Herkules Capital](http://www.herkulescapital.no/), the leading Norwegian private equity firm which supports established companies located in the Nordic region with strong growth potential.
 
 ### Authors
 - Sven Ståle Osa

@@ -1,4 +1,4 @@
-#Overview
+# Overview
 [Back to main page](https://github.com/Intelecom/sms/) - [Next section](/sections/about.md)
 
 ## Table of Contents
@@ -18,7 +18,7 @@
 - Library documentation - [Each library](/README.md#list-of-official-libraries) provides basic "getting started" in each repo (readme.md).
 - How to [get in touch with us](/sections/contact.md)?
 
-##Introduction
+## Introduction
 This documentation describes the functionality of, and explains how to integrate with, the Puzzel SMS Gateway (SMSGW). 
 
 The SMSGW is an API that enables your solution(s) to send and receive SMS messages, both single messages and bigger batches of messages using the same API. 
@@ -37,12 +37,12 @@ Due to the flexibility of the REST / SOAP interfaces, we generally recommend tha
 
 To receive SMS messages (MO) or delivery reports (DR) you need to provide a service endpoint that can receive HTTP GET or POST requests. As an alternative, you can also receive MO messages as email messages (SMTP) or using the SMPP protocol.
 
-#####High level sequence diagram for basic SMS Gateway operations
+##### High level sequence diagram for basic SMS Gateway operations
 ![Figure 1: High-level sequence diagram for basic SMSGW operations](http://i.imgur.com/3CXClMd.jpg)
 
 Additionally, the Gateway provides a Management API to manage messages. A description of this API is given [here](/sections/interfaces/management-api.md).
 
-##Abbreviations
+## Abbreviations
 
 <table>
 <tr><th>Abbreviation</th><th>Description</th></tr>	

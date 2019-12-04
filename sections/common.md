@@ -194,7 +194,7 @@ The parsing type can be set on the service level and it is recommended to only s
 
 See the chapter on <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#message-content">message content</a> for further details about the different parsing types.
 </td></tr>
-<tr><td>strex_verification_timeout</td><td>String</td><td>Used for Strex verification process. Specified time to wait for a end user Strex verification before timing out. </br></br> Valid Values: 0-30</td></tr> 
+<tr><td>strex_verification_timeout</td><td>String</td><td>Used for Strex verification process. Specified time in minutes to wait for an end user to complete verification before timing out.</br></br> Valid Values: 0-30</td></tr> 
 <tr><td>strex_merchant_sell_option</td><td>String</td><td>Used for Strex verification process. Specifies the type of verification process to be used. Use "confirmation" if nothing else is agreed with Strex. </br></br> Valid Values: 
 	<ul>
 		<li>none</li>

@@ -40,17 +40,17 @@ Similar to the other interfaces the HTTP(S) GET interface supports sending multi
 
 #### Simple message:
 
-	https://smsgw.intele.com/gw/rs/sendMessages?serviceId=99999&message[0].recipient=%2B4799999999&message[0].content=Dette+er+en+ny+test.&username=test&password=test
+	https://<server-url>/gw/rs/sendMessages?serviceId=99999&message[0].recipient=%2B4799999999&message[0].content=Dette+er+en+ny+test.&username=test&password=test
 
 *Note that +47 becomes %2B47 when URL encoded*
 
 #### Message with originator settings:
 
-	https://smsgw.intele.com/gw/rs/sendMessages?serviceId=999899&username=test&password=test&message[0].recipient=+4799999999&message[0].content=Test&message[0].settings.originatorSettings.originatorType=ALPHANUMERIC&message[0].settings.originatorSettings.originator=Puzzel
+	https://<server-url>/gw/rs/sendMessages?serviceId=999899&username=test&password=test&message[0].recipient=+4799999999&message[0].content=Test&message[0].settings.originatorSettings.originatorType=ALPHANUMERIC&message[0].settings.originatorSettings.originator=Puzzel
  
 #### Message with PID parameter setting:
 
-	https://smsgw.intele.com/gw/rs/sendMessages?serviceId=99999& username=test&password=test&message[0].recipient=%2B4799999999&message[0].content=Dette+er+en+ny+test.&message[0].settings.parameter[0].key=pid&message[0].settings.parameter[0].value=68
+	https://<server-url>/gw/rs/sendMessages?serviceId=99999& username=test&password=test&message[0].recipient=%2B4799999999&message[0].content=Dette+er+en+ny+test.&message[0].settings.parameter[0].key=pid&message[0].settings.parameter[0].value=68
 
 ### Response example
 

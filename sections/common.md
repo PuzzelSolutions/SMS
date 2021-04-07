@@ -194,6 +194,7 @@ The parsing type can be set on the service level and it is recommended to only s
 
 See the chapter on <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#message-content">message content</a> for further details about the different parsing types.
 </td></tr>
+<tr><td>skip_customer_report_delivery</td><td>Boolean</td><td>Do not request delivery report (overrides service configuration).</td></tr>
 <tr><td>strex_verification_timeout</td><td>String</td><td>Used for Strex verification process. Specified time in minutes to wait for an end user to complete verification before timing out.</br></br> Valid Values: 0-30</td></tr> 
 <tr><td>strex_merchant_sell_option</td><td>String</td><td>Used for Strex verification process. Specifies the type of verification process to be used. Use "confirmation" if nothing else is agreed with Strex. </br></br> Valid Values: 
 	<ul>
@@ -209,7 +210,7 @@ See the chapter on <a href="https://github.com/Intelecom/sms/blob/master/section
 		<li>otp (not in use)</li>
 	</ul>
 </td></tr>
-<tr><td>strex_authorization_token</td><td>String</td><td>Used for Strex pre-authentication / authentication process. Only applies to premium messages sent to Strex customers. Specifies a Strex authentication token to be used for recurring premium messages that verifies that users has accepted the payment agreement. </br></br> See <a href="https://github.com/PuzzelSolutions/direct-payment/blob/master/methods.md#preauthorize">this </a> section for more information on how to create Strex authentication tokens.</td></tr>  
+<tr><td>strex_authorization_token</td><td>String</td><td>Used for Strex pre-authentication / authentication process. Only applies to premium messages sent to Strex customers. Specifies a Strex authentication token to be used for recurring premium messages that verifies that users has accepted the payment agreement. </br></br> See <a href="https://github.com/PuzzelSolutions/direct-payment/blob/master/methods.md#preauthorize">this </a> section for more information on how to create Strex authentication tokens.</td></tr>
 </table> 
 
 ## Response parameters

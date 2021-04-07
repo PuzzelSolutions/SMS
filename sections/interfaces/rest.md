@@ -316,7 +316,7 @@ A few examples how this method can be used:
 Header name | Header value | Description
 ----------- | -------------| -------------------
 X-API-Key   | 3141592654   | For a fixed API-key
-Authenticaiton | Bearer <jwt> | For a fixed bearer token, where <jwt> is a [JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519).
+Authorization | Bearer <jwt> | For a fixed bearer token, where <jwt> is a [JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519).
 
 ### OAuth2
 

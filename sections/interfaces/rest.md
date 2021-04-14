@@ -204,7 +204,7 @@ For description of incoming SMS (MO) parameters see [this section](/sections/com
 			<sessionid/>
 		</message>
 	</mo>
-
+	
 ## Receiving Delivery Report (DR) messages
 
 If you need to know whether a specific message is received by the end users handset or not, you will need to implement a server side service able of receiving HTTP POST requests through a REST API with either JSON or XML formatted content. 
@@ -290,3 +290,50 @@ If the gateway does not receive a HTTP 200 acknowledge it will try resending the
 
 **IMPORTANT:** Respond as fast as possible on the request before you start doing heavy business logic. It is strongly recommended to use an asynchronous model where you acknowledge the message and add it to an internal queue, for example database. Do not use a synchronous model where you do all the business logic and then send a response message. Our experience is that customers that fail to respond within the time limit of the request often experience that their messages are queued. This is because the system will use some of its resources to resubmit messages that your server has received earlier but failed to acknowledge. The higher the traffic peaks, the more significant this problem will be.
 
+## Authentication and authorization for receiving incoming SMS (MO) and Delivery Report (DR) messages
+
+Puzzel SMS GW supports the following methods for authentication and authorization of requests to deliver incoming SMS and delivery report messages:
+
+1. IP filtering
+2. Query parameter
+3. Header with a specific value
+4. OAuth2 Bearer tokens 
+
+Notice that for (3) and (4) the authentication configuration is used for all MO and DR messages for a service. It cannot be configured for each endpoint.
+
+### IP filtering
+IP filtering can be used to filter on the IP address of the client that sends the request. See [above](#Receiving-messages-(MO)) for the IP address.
+
+### Query parameter
+
+A query parameter may be added to the MO/DR endpoint. This must be a fixed value.
+
+### Header with a specific value
+
+Adds a header to requests with a given name and value.
+
+A few examples how this method can be used:
+Header name | Header value | Description
+----------- | -------------| -------------------
+X-API-Key   | 3141592654   | For a fixed API-key
+Authorization | Bearer <jwt> | For a fixed bearer token, where <jwt> is a [JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519).
+
+### OAuth2
+
+[OAuth2](https://tools.ietf.org/html/rfc6749) is the industry-standard protocol for authorization. It allows clients to obtain limited access to resources.
+
+Currently only the OAuth2 client credential flow is supported. Contact support to enquire other flows.
+
+Several parameters must be configured to use OAuth2. These are divided into common and provider-specific parameters. Some examples of provider-specific parameters are given below.
+
+Parameter name | Common / Provider specific                | Example value                           | Description
+-------------- | ----------------------------------------- | --------------------------------------- | -----------
+authorize_uri  | Common                                    | https://myprovider.invalid/oauth2/token | URI for client to obtain token from the OAuth2 provider.
+grant_type     | Common                                    | client_credentials                      | This parameter is always included and cannot be modified.
+client_id      | Common                                    | af47b8e2-8e0a-4b5f-9013-5f178b1c5938    | OAuth2 client identifier.
+client_secret  | Common                                    | Riebaz7phaich7Wi6Ba0eing3elaij6eife     | OAuth2 client secret.
+tenant_id      | Microsoft Azure Active Directory provider | 2f551041-160d-44a5-b251-b2694c08f028    | Azure tenant identifier.
+resource       | Microsoft Azure Active Directory provider | f3dc9124-045f-46ca-b3d2-4ab6f9eee65e    | Azure AD resource identifier.
+audience       | Auth0                                     | urn:example:myservice:api               | Auth0 audience.
+
+First contact Support to agree on how to transmit secure parameters, such as client_secret.

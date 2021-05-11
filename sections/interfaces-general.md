@@ -26,4 +26,4 @@ The different interfaces have some differences regarding what functionality is a
 
 It is possible to combine the different interfaces, for example it is possible to send MT messages using SOAP webservices, receive MO SMS using Rest API (HTTP POST with JSON or XML) and recieve delivery reports using HTTP(S) GET.
 
-When integrating towards SMS Gateway, make sure that your client support the latest TLS standars (e.g. TLSv1.2) and support cipher suites that are considered secure.
+When integrating towards SMS Gateway, make sure that your client support the latest TLS standards (e.g. TLSv1.2) and support cipher suites that are considered secure.

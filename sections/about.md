@@ -23,7 +23,7 @@ The available APIs for sending SMS messages are:
 - HTTP GET (with limited functionality)
 - SMTP (email – with limited functionality)
 - SMPP
-- TCP / IP Sockets (with XML payload)
+- TCP Socket / XML API
 
 By using the SOAP and REST interfaces, it is possible to send several messages in one batch. This can be messages to different recipients and with different price and content. All interfaces except SMTP will synchronously return a status code and message identifier, which is a unique identifier for each message in the Puzzel platform. The status code will give information about whether the messages were added to the internal queue in the Puzzel system or not. The status code will not give information about whether the message was received on the end user's handset or not. In order to check for this, you need to utilize the delivery report mechanism as described in a later section. 
 

@@ -9,7 +9,6 @@ The SMS Gateway API have several different interfaces that you can choose to int
 - [HTTP GET API](/sections/interfaces/http-get.md)
 - [SMTP SMS GW](/sections/interfaces/smtp.md)
 - [SMPP](/sections/interfaces/smpp.md)
-- [TCP sockets / XML](/sections/interfaces/tcp-xml.md)
 
 The different interfaces have some differences regarding what functionality is available, see table below:
 
@@ -21,7 +20,6 @@ The different interfaces have some differences regarding what functionality is a
 <tr><td>HTTP(S) GET</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Number of messages in each batch limited by max URL length</tr>
 <tr><td>SMTP (email)</td><td>Yes</td><td>Yes</td><td>No</td><td>Not all parameters are available</tr>
 <tr><td>SMPP</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Only recommended if you have a pre-built SMPP client </tr>
-<tr><td>TCP Socket</td><td>Yes</td><td>No</td><td>No</td><td></tr>
 </table>
 
 It is possible to combine the different interfaces, for example it is possible to send MT messages using SOAP webservices, receive MO SMS using Rest API (HTTP POST with JSON or XML) and recieve delivery reports using HTTP(S) GET.

@@ -45,7 +45,6 @@ The documentation consists of different sections, starting with an overview / ta
 	- [SOAP API](sections/interfaces/soap.md)
 	- [HTTP GET API](sections/interfaces/http-get.md)
 	- [SMTP SMS GW](sections/interfaces/smtp.md)
-	- [TCP sockets / XML API](sections/interfaces/tcp-xml.md)
 	- [SMPP](sections/interfaces/smpp.md)
 	- [Management API](sections/interfaces/management-api.md)
 	- [Value-added services for MO messages](sections/interfaces/vas.md)
@@ -70,11 +69,11 @@ For live accounts pricing is based on establishment, monthly subscription and tr
 
 ### About Puzzel 
 
-Puzzel (formerly Intelecom’s contact centre entity) builds on 20 years’ heritage of crafting inventive and dependable solutions for customer interactions. It was one of the first pioneers to develop a cloud-based contact centre and has now extended this to encompass a complete new customer interaction platform with unique integration capabilities and payment solutions. Puzzel can be adapted to accommodate from one to several thousand users using any device, in any location and integrates with multiple applications seamlessly, allowing customers to meet the needs of today’s omni-channel and mobile environments.
+Puzzel builds on 20 years’ heritage of crafting inventive and dependable solutions for customer interactions. It was one of the first pioneers to develop a cloud-based contact centre and has now extended this to encompass a complete new customer interaction platform with unique integration capabilities and payment solutions. Puzzel can be adapted to accommodate from one to several thousand users using any device, in any location and integrates with multiple applications seamlessly, allowing customers to meet the needs of today’s omni-channel and mobile environments.
 
 Puzzel is one of the few contact centre solutions that is completely multi-channel and brings together all the pieces to respond to phone, email, Web Chat, Social Media, SMS and payment enquiries all within one application. Click here to learn more about our multi-channel contact centre with our new extensible user interface and secure payment solutions.
 
-Puzzel employs over 130 people who are all passionate about delivering innovative customer interaction solutions for contact centres and mobile environments.
+Puzzel employs over 200 people who are all passionate about delivering innovative customer interaction solutions for contact centres and mobile environments.
 
 ##### Puzzel’s Heritage
 

@@ -11,7 +11,6 @@
 	- [SOAP API](/sections/interfaces/soap.md)
 	- [HTTP GET API](/sections/interfaces/http-get.md)
 	- [SMTP SMS GW](/sections/interfaces/smtp.md)
-	- [TCP sockets / XML](/sections/interfaces/tcp-xml.md)
 	- [SMPP](/sections/interfaces/smpp.md)
 	- [Management API](/sections/interfaces/management-api.md)
 	- [Value-added services for MO messages](/sections/interfaces/vas.md)
@@ -31,7 +30,7 @@ The SMSGW has three main functionalities with corresponding APIs:
 - Receiving SMS messages from end-users to your system (MO)
 - Receiving delivery reports to your system for SMS messages sent to end-users (DR)
 
-To send SMS messages to end-users, you need to integrate with one of the APIs via REST (XML, JSON or web form over HTTP POST), Web Service (with corresponding WSDL), email (SMTP), SMPP, TCP Sockets or via HTTP GET (with query parameters). 
+To send SMS messages to end-users, you need to integrate with one of the APIs via REST (XML, JSON or web form over HTTP POST), Web Service (with corresponding WSDL), email (SMTP), SMPP or via HTTP GET (with query parameters). 
 
 Due to the flexibility of the REST / SOAP interfaces, we generally recommend that you choose to integrate with one of these endpoints if possible.
 

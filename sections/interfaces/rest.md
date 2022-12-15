@@ -121,7 +121,7 @@ If you want to enable end users to send SMS messages to your solution via REST y
 
 The SMSGW will invoke your HTTP service when MO messages are slated for delivery to your server. The URL of your service must be provided to Puzzel Help ([help.puzzel.com](http://help.puzzel.com "Puzzel Help")) for proper configuration of the service. You also need to provide information of which content-type you want to use (HTTP POST with JSON or HTTP POST with XML).
 
-If you need to add a firewall rule, all requests will originate from IP: 212.89.48.14.
+If you need to add a firewall rule, you can find the originating IP addresses on [this](https://help.puzzel.com/product-documents/technical-specs/basic-requirements) page. 
 
 [ngrok](/references/ngrok.md) is a great tool to use when testing MO / DR messages locally. 
 

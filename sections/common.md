@@ -248,7 +248,7 @@ Reference ID for the request. Either the value provided by the client in the req
 <tr><td>recipient</td><td>String</td><td>The recipient of the SMS message (MSISDN).<br/><br/> 
 <b>Note:</b> The SMS gateway runs all numbers through a number parser and so the recipient in the response may be in same format than in the request, i.e. “+47 41 00 00 00” will be “+4741000000” in the response. Use the clientReference if you need to match messages in the request and response.
 </td></tr>
-<tr><td>messageId</td><td>String</td><td>Message identifier (used as reference for delivery reports).
+<tr><td>messageid</td><td>String</td><td>Message identifier (used as reference for delivery reports).
 </td></tr>	
 <tr><td>sessionId</td><td>String</td><td>Session identifier for a session, see <a href="https://github.com/Intelecom/sms/blob/master/sections/about.md#sessions">here</a> for more information. Only returned if newSession parameter is set to true, or if a sessionid was specified.
 <tr><td>sequenceIndex</td><td>Integer</td><td>The messages in the response will always be in the same order as in the request. The sequence index is a convenience counter starting at 1.</td></tr>	
@@ -297,7 +297,7 @@ The SMSGW will invoke your HTTP service when MO- and DR-messages are slated for 
 
 Your server must respond to the HTTP request with a HTTP 200 header response, any other response code will by default cause a retry of delivery.
 
-If the gateway does not receive a HTTP 200 acknowledge, it will try resending the message to the CP. The MessageId will be the same as the previous attempt. Normally the MO-request will wait 60 seconds for the HTTP 200 response. If your server does not respond within the time limit, the message is marked as undelivered and the gateway will try to resend the message later. 
+If the gateway does not receive a HTTP 200 acknowledge, it will try resending the message to the CP. The messageid will be the same as the previous attempt. Normally the MO-request will wait 60 seconds for the HTTP 200 response. If your server does not respond within the time limit, the message is marked as undelivered and the gateway will try to resend the message later. 
 
 <b>IMPORTANT:</b> Respond as fast as possible on the request before you start doing heavy business logic. It is strongly recommended to use an asynchronous model where you acknowledge the message and add it to an internal queue, for example database. Do not use a synchronous model where you do all the business logic and then send a response message. Our experience is that customers that fail to respond within the time limit of the request often experience that their messages are queued. This is because the system will use some of its resources to resubmit messages that your server has received earlier but failed to acknowledge. The higher the traffic peaks, the more significant this problem will be.
 
@@ -311,7 +311,7 @@ This is an asynchronous operation and you will need to implement a mechanism for
 
 <table>
 <tr><th>Parameter Name</th><th>Data Type</th><th>Description</th></tr>	
-<tr><td>messageId</td><td>String</td><td>The messageid of the original message this report is for</td></tr>
+<tr><td>messageid</td><td>String</td><td>The messageid of the original message this report is for</td></tr>
 <tr><td>customerbatchreference</td><td>String</td><td>The batchReference of the MT message. A system batch reference is generated if you do not specify one when sending the MT message.</td></tr>
 <tr><td>customermessagereference</td><td>String</td><td>The clientReference you specified in the MT message. 
 </td></tr>	

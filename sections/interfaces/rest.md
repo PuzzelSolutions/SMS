@@ -286,7 +286,7 @@ For description of delivery report parameters see [this section](/sections/commo
 
 Your server must respond to the HTTP request with a HTTP 200 header response, any other response code will by default cause a retry of delivery.
 
-If the gateway does not receive a HTTP 200 acknowledge it will try resending the message to the CP. The MessageId will be the same as the previous attempt. Normally the MO-request will wait 60 seconds for the HTTP 200 response. If your server does not respond within the time limit, the message is marked as undelivered and the gateway will try to resend the message later. 
+If the gateway does not receive a HTTP 200 acknowledge it will try resending the message to the CP. The messageid will be the same as the previous attempt. Normally the MO-request will wait 60 seconds for the HTTP 200 response. If your server does not respond within the time limit, the message is marked as undelivered and the gateway will try to resend the message later. 
 
 **IMPORTANT:** Respond as fast as possible on the request before you start doing heavy business logic. It is strongly recommended to use an asynchronous model where you acknowledge the message and add it to an internal queue, for example database. Do not use a synchronous model where you do all the business logic and then send a response message. Our experience is that customers that fail to respond within the time limit of the request often experience that their messages are queued. This is because the system will use some of its resources to resubmit messages that your server has received earlier but failed to acknowledge. The higher the traffic peaks, the more significant this problem will be.
 

@@ -55,7 +55,7 @@ Additionally, the Gateway provides a Management API to manage messages. A descri
 <tr><td>MT</td><td>Mobile Terminated (outgoing messages sent to end users).</td></tr>	
 <tr><td>CP</td><td>Content Providers (Customers of Puzzel and Puzzel itself)</td></tr>	
 <tr><td>DR</td><td>Delivery Reports (Confirmations from operators that messages have been / not have been received by end-user)</td></tr>	
-<tr><td>MSISDN</td><td> Mobile Station International ISDN Number</td></tr>	
+<tr><td>MSISDN</td><td>Mobile Station International Subscriber Directory Number. It's a number used to identify a phone number internationally</td></tr>	
 <tr><td>SMSGW</td><td>Puzzel SMS Gateway</td></tr>	
 <tr><td>REST</td><td>Representational State Transfer (https://en.wikipedia.org/wiki/Representational_state_transfer)</td></tr>	
 <tr><td>MNO</td><td>Mobile Network Operator (e.g. Telenor, Telia)</td></tr>	

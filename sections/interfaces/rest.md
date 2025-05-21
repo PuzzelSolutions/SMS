@@ -36,7 +36,7 @@ The XML request and response uses the same schema used in the WSDL definition fo
 ### XML Request Example
 
 	<?xml version="1.0"?>
-	<req:request xmlns:req=http://chimera.intele.com/gw/xsd/SMSGateway/Request/2013/02 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<req:request xmlns:req="http://chimera.intele.com/gw/xsd/SMSGateway/Request/2013/02" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 		<serviceId>1000</serviceId>
 		<username>Puzzel</username>
 		<password>xdyf3bf2</password>

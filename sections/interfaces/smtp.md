@@ -1,6 +1,6 @@
 #SMTP API
 
-[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces/smtp.md) -  [Next section](/sections/interfaces/tcp-xml.md)
+[Back to main page](https://github.com/PuzzelSolutions/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces/smtp.md) -  [Next section](/sections/interfaces/tcp-xml.md)
 
 The SMS gateway also provides email as an alternative channel for sending / receiving sms messages. This channel is limited in what kind of messages it can send and what parameters are accepted. 
 
@@ -8,7 +8,7 @@ The SMS gateway also provides email as an alternative channel for sending / rece
 
 The recipients in the mail message are the receivers of the message in the format: 
 
-	<recipient>-<serviceid>@smsmail.intele.com
+	<recipient>-<serviceid>@smsmail.puzzel.com
 
 The subject field is ignored (however, it may be configured to be appended to the message). The body of the email is used as the SMS content.
 

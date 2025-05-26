@@ -31,7 +31,7 @@ The content encoding should be UTF-8
 
 The XML request and response uses the same schema used in the WSDL definition for the SOAP interface:
 
-	https://<server-url>/gw/SMSGateway?wsdl
+	https://<server-url>/gw/ws/SMSGatewayV10?wsdl
 
 ### XML Request Example
 

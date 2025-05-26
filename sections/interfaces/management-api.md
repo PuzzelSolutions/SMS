@@ -1,5 +1,5 @@
 # SMS Gateway Management API
-[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces/smpp.md) -  [Next section](/sections/interfaces/vas.md)
+[Back to main page](https://github.com/PuzzelSolutions/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces/smpp.md) -  [Next section](/sections/interfaces/vas.md)
 
 
 This API provides functionality to manage messages and receive status from the Gateway. Functionality is divided into functional groups described below.
@@ -153,7 +153,7 @@ Note that username and password must be provided per the HTTP Basic authenticati
 ##### REST Request
 
 	DELETE /mgmt/rs/service/1000/batch/my-batch-reference HTTP/1.1
-	Host: smsgw.intele.com
+	Host: smsgw.puzzel.com
 	Authorization: Basic aW50ZWxlY29tOnhkeWYzYmYy
 	User-Agent: curl/7.26.0
 	Accept: application/json
@@ -243,7 +243,7 @@ Note that username and password must be provided per the HTTP Basic authenticati
 ##### REST Request 
 
 	GET /mgmt/rs/service/1000/batch/ HTTP/1.1
-	Host: smsgw.intele.com
+	Host: smsgw.puzzel.com
 	Authorization: Basic aW50ZWxlY29tOnhkeWYzYmYy
 	User-Agent: curl/7.26.0
 	Accept: application/json
@@ -355,7 +355,7 @@ Note that username and password must be provided per the HTTP Basic authenticati
 ##### REST Request
 
 	GET /mgmt/rs/service/1000/batch/my-batch HTTP/1.1
-	Host: smsgw.intele.com
+	Host: smsgw.puzzel.com
 	Authorization: Basic aW50ZWxlY29tOnhkeWYzYmYy
 	User-Agent: curl/7.26.0
 	Accept: application/json

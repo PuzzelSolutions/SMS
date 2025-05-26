@@ -1,6 +1,6 @@
 # REST API
 
-[Back to main page](https://github.com/Intelecom/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces-general.md) -  [Next section](/sections/interfaces/soap.md)
+[Back to main page](https://github.com/PuzzelSolutions/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces-general.md) -  [Next section](/sections/interfaces/soap.md)
 
 This section describes how to integrate towards the Puzzel SMS Gateway REST API. The Rest API supports both sending SMS (MT), receiving SMS (MO) and delivery reports (DR). Please see [here](/sections/common.md) for information about the available message parameters.
 
@@ -31,7 +31,7 @@ The content encoding should be UTF-8
 
 The XML request and response uses the same schema used in the WSDL definition for the SOAP interface:
 
-	https://<server-url>/gw/SMSGateway?wsdl
+	https://<server-url>/gw/ws/SMSGatewayV10?wsdl
 
 ### XML Request Example
 
@@ -107,7 +107,7 @@ The XML request and response uses the same schema used in the WSDL definition fo
 ### Web Request Example
 
 	POST /gw/rs/sendMessages HTTP/1.1
-	Host: smsgw.intele.com
+	Host: smsgw.puzzel.com
 	Cache-Control: no-cache
 	Content-Type: application/x-www-form-urlencoded
 	

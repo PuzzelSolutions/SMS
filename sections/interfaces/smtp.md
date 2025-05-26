@@ -27,7 +27,7 @@ By saying highly configurable, we mean that any field from [this section](/secti
 
 Example: 
 
-	Sender: 	[originator]-[serviceid]@sms.carrot.no
+	Sender: 	[originator]-[serviceid]@sms.puzzel.no
 	Subject: 	SMS message from Puzzel: [originator]
 	Message:	This is a message from Puzzel SMS platform. User sent: [content]
 

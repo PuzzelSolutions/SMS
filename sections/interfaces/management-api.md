@@ -1,5 +1,5 @@
 # SMS Gateway Management API
-[Back to main page](https://github.com/PuzzelSolutions/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces/smpp.md) -  [Next section](/sections/interfaces/vas.md)
+[Back to main page](https://github.com/PuzzelSolutions/sms/) - [Table of contents](/sections/overview.md) - [Previous section](/sections/interfaces/http-get.md) -  [Next section](/sections/interfaces/rest.md)
 
 
 This API provides functionality to manage messages and receive status from the Gateway. Functionality is divided into functional groups described below.

@@ -45,13 +45,11 @@ The documentation consists of different sections, starting with an overview / ta
 	- [SOAP API](sections/interfaces/soap.md)
 	- [HTTP GET API](sections/interfaces/http-get.md)
 	- [SMTP SMS GW](sections/interfaces/smtp.md)
-	- [SMPP](sections/interfaces/smpp.md)
 	- [Management API](sections/interfaces/management-api.md)
-	- [Value-added services for MO messages](sections/interfaces/vas.md)
 - Library documentation - [Each library](#list-of-official-libraries) provides a basic "getting started" in each repo (readme.md).
 - How to [get in touch with us](sections/contact.md)?
 
-We also provide reference documentation such as the SMPP specification and GSM specifications. 
+We also provide reference documentation such as the GSM specifications. 
 
 ### Registering an account
 

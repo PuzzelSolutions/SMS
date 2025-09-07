@@ -11,9 +11,7 @@
 	- [SOAP API](/sections/interfaces/soap.md)
 	- [HTTP GET API](/sections/interfaces/http-get.md)
 	- [SMTP SMS GW](/sections/interfaces/smtp.md)
-	- [SMPP](/sections/interfaces/smpp.md)
 	- [Management API](/sections/interfaces/management-api.md)
-	- [Value-added services for MO messages](/sections/interfaces/vas.md)
 - Library documentation - [Each library](/README.md#list-of-official-libraries) provides basic "getting started" in each repo (readme.md).
 - How to [get in touch with us](/sections/contact.md)?
 
@@ -30,11 +28,11 @@ The SMSGW has three main functionalities with corresponding APIs:
 - Receiving SMS messages from end-users to your system (MO)
 - Receiving delivery reports to your system for SMS messages sent to end-users (DR)
 
-To send SMS messages to end-users, you need to integrate with one of the APIs via REST (XML, JSON or web form over HTTP POST), Web Service (with corresponding WSDL), email (SMTP), SMPP or via HTTP GET (with query parameters). 
+To send SMS messages to end-users, you need to integrate with one of the APIs via REST (XML, JSON or web form over HTTP POST), Web Service (with corresponding WSDL), email (SMTP) or via HTTP GET (with query parameters). 
 
 Due to the flexibility of the REST / SOAP interfaces, we generally recommend that you choose to integrate with one of these endpoints if possible.
 
-To receive SMS messages (MO) or delivery reports (DR) you need to provide a service endpoint that can receive HTTP GET or POST requests. As an alternative, you can also receive MO messages as email messages (SMTP) or using the SMPP protocol.
+To receive SMS messages (MO) or delivery reports (DR) you need to provide a service endpoint that can receive HTTP GET or POST requests. As an alternative, you can also receive MO messages as email messages (SMTP).
 
 ##### High level sequence diagram for basic SMS Gateway operations
 ![Figure 1: High-level sequence diagram for basic SMSGW operations](http://i.imgur.com/3CXClMd.jpg)

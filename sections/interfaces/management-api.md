@@ -7,21 +7,7 @@ The API is available from web service and REST interfaces, similar to the SMS se
 
 ## Interfaces for using the management API
 
-The management API is available as a web service and REST service.
-
-### Web service (SOAP over HTTP)
-
-The web service interface is defined by the WSDL and can be retrieved from: 
-
-	https://[server-address]/mgmt/ws/GatewayManagementV10?wsdl
-
-#### Error codes
-
-<table>
-<tr><th>Value</th><th>Description</th><tr>
-<tr><td>1000</td><td>No batch found matching the given customer batch reference for this service
-In addition the status codes for the SMS Gateway API are also used, e.g., for authorization errors.</td></tr>
-</table>
+The management API is available as a REST service.
 
 ### REST
 
@@ -113,43 +99,6 @@ Note that username and password must be provided per the HTTP Basic authenticati
 
 #### Examples
 
-##### SOAP Webservice Request
-
-	<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gwmgmt="http://chimera.intele.com/gw/wsdl/GatewayManagement-v1.0">
-	   <soapenv:Header/>
-	   <soapenv:Body>
-	      <gwmgmt:stopBatchRequest>
-	         <!--You may enter the following 4 items in any order-->
-	         <serviceId>1000</serviceId>
-	         <username>Puzzel</username>
-	         <password>xdyf3bf2</password>
-	         <clientBatchReference>my-batch-reference</clientBatchReference>
-	      </gwmgmt:stopBatchRequest>
-	   </soapenv:Body>
-	</soapenv:Envelope>
-
-##### SOAP Webservice Response
-
-	<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-	   <soap:Body>
-	      <ns2:stopBatchResponse 
-	           xmlns:ns2="http://chimera.intele.com/gw/wsdl/GatewayManagement-v1.0">
-	         <serviceId>27</serviceId>
-	         <clientBatchReference>my-batch-reference</clientBatchReference>
-	         <stoppedMessages>
-	            <messageId>6z02r0001500</messageId>
-	         </stoppedMessages>
-	         <stoppedMessages>
-	            <messageId>6z02r0001600</messageId>
-	         </stoppedMessages>
-	         <stoppedMessages>
-	            <messageId>6z02r0001700</messageId>
-	         </stoppedMessages>
-	      </ns2:stopBatchResponse>
-	   </soap:Body>
-	</soap:Envelope>
-
-
 ##### REST Request
 
 	DELETE /mgmt/rs/service/1000/batch/my-batch-reference HTTP/1.1
@@ -210,35 +159,6 @@ Note that username and password must be provided per the HTTP Basic authenticati
 <tr><td>404</td><td>Not Found</td><td>The requested batch cannot be found. Ensure that the batch reference is correct for the given service.</td></tr>
 <tr><td>500</td><td>Internal Server Error</td><td>An unexpected error has occurred. For example invalid request URI.</td></tr>		
 </table>
-
-
-##### SOAP Webservice Request
-
-	<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns: gwmgmt ="http://chimera.intele.com/gw/wsdl/GatewayManagement-v1.1">
-	   <soapenv:Header/>
-	   <soapenv:Body>
-	      <gwmgmt:getBatchListRequest>
-	         <!--You may enter the following 3 items in any order-->
-	         <serviceId>1000</serviceId>
-	         <username>Puzzel</username>
-	         <password> xdyf3bf2</password>
-	      </gwmgmt:getBatchListRequest>
-	   </soapenv:Body>
-	</soapenv:Envelope>
-
-##### SOAP Webservice Response
-	
-	<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-	   <soap:Body>
-	      <ns2:getBatchListResponse xmlns:ns2="http://chimera.intele.com/gw/wsdl/GatewayManagement-v1.1">
-	         <messageBatch>
-	            <clientBatchReference>gwmgmt-test</clientBatchReference>
-	            <totalSize>3</totalSize>
-	            <onHold>1</onHold>
-	         </messageBatch>
-	      </ns2:getBatchListResponse>
-	   </soap:Body>
-	</soap:Envelope>
 
 ##### REST Request 
 
@@ -321,36 +241,6 @@ Note that username and password must be provided per the HTTP Basic authenticati
 </table>
 
 #### Examples
-
-##### SOAP Webservice Request
-
-	<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns: gwmgmt ="http://chimera.intele.com/gw/wsdl/GatewayManagement-v1.1">
-	   <soapenv:Header/>
-	   <soapenv:Body>
-	      <gwmgmt:getBatchStatusRequest>
-	         <!--You may enter the following 3 items in any order-->
-	         <serviceId>1000</serviceId>
-	         <username>Puzzel</username>
-	         <password> xdyf3bf2</password>
-	         <clientBatchReference>my-batch</clientBatchReference>
-	      </gwmgmt:getBatchStatusRequest>
-	   </soapenv:Body>
-	</soapenv:Envelope>
-
-
-##### SOAP Webservice Response
-
-	<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-	   <soap:Body>
-	      <ns2:getBatchStatusResponse xmlns:ns2="http://chimera.intele.com/gw/wsdl/GatewayManagement-v1.1">
-	         <messageBatch>
-	            <clientBatchReference>my-batch</clientBatchReference>
-	            <totalSize>3000</totalSize>
-	            <onHold>100</onHold>
-	         </messageBatch>
-	      </ns2:getBatchListResponse>
-	   </soap:Body>
-	</soap:Envelope>
 
 ##### REST Request
 

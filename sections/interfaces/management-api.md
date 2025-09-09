@@ -156,7 +156,6 @@ N / A
 <tr><td>401</td><td>Unauthorized</td><td>The pair of username and password given is not authorized to manage the provided service id.<br/>
 Note that username and password must be provided per the HTTP Basic authentication standard (IETF RFC2617).
 </td></tr>
-<tr><td>404</td><td>Not Found</td><td>The requested batch cannot be found. Ensure that the batch reference is correct for the given service.</td></tr>
 <tr><td>500</td><td>Internal Server Error</td><td>An unexpected error has occurred. For example invalid request URI.</td></tr>		
 </table>
 
